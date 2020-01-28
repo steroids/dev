@@ -1,9 +1,10 @@
 <?php
 
-
 use steroids\core\boot\Boot;
 use steroids\core\helpers\ModuleHelper;
 use yii\helpers\ArrayHelper;
+
+define('STEROIDS_APP_DIR', __DIR__ . '/backend');
 
 $customConfig = require __DIR__ . '/steroids/core/boot/preload.php';
 $steroidsDevDir = ArrayHelper::getValue($customConfig, 'modules.gii.steroidsDevDir');

@@ -1,0 +1,25 @@
+{
+    "name": "boilerplate-yii2-k4nuj8",
+    "description": "Boilerplate Yii 2 k4nuj8",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": ">=7.2.0",
+        "ext-mbstring": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "lib-pcre": "*",
+        "yiisoft/yii2": "^2.0",
+        "yiisoft/yii2-swiftmailer": "^2.1",
+        "yiisoft/yii2-debug": "^2.1",
+        "notamedia/yii2-sentry": "^1.3",
+        "yiisoft/yii2-gii": "^2.0",
+        "phpunit/phpunit": "5.7.19",
+        "doctrine/annotations": "^1.6"
+    },
+    "config": {
+        "process-timeout": 1800
+    }
+}

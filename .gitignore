@@ -35,6 +35,7 @@ composer.phar
 
 public/assets/*
 /node_modules
+/mobile/node_modules
 /vendor
 /files
 /files/log

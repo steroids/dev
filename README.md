@@ -2,6 +2,7 @@
 
 Репозиторий предназначен для удобной разработки библиотеки `steroids`.
 
+
 ## Развертывание дев проекта
 
 #### 1. Клонирование репозиториев
@@ -42,3 +43,19 @@ ln -s ../../react-bootstrap bootstrap
 ```bash
 cp config.sample.php config.php
 ```
+
+
+## Генерация typedoc
+
+Устанавливаем генератор:
+
+```bash
+npm i -g typedoc
+```
+
+Запускаем:
+
+```sh
+node steroids/react/typedoc/generate.js
+```
+

@@ -1,18 +1,19 @@
 import React from 'react';
-import {Link} from '@steroidsjs/core/ui/nav';
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import layout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hoc/layout';
 
 import {bem, components} from '@steroidsjs/core/hoc';
-import {ROUTE_ROOT} from '../../routes';
 import './Layout.scss';
+import NavBar from '@steroidsjs/core/ui/nav/NavBar';
+
+import logoUrl from 'static/logo-steroids.svg';
 
 @bem('Layout')
 @components('http')
 @layout(
     /*props => props.http.post('/api/v1/init', {
         timestamp: Date.now(),
-    })*/
+    }),*/
     () => Promise.resolve({})
 )
 export default class Layout extends React.PureComponent {
@@ -24,16 +25,13 @@ export default class Layout extends React.PureComponent {
         const bem = this.props.bem;
         return (
             <div className={bem.block()}>
-                <nav className={bem('navbar', bem.element('header'))}>
-                    <div>
-                        <Link
-                            className={bem('navbar-brand', bem.element('logo'))}
-                            toRoute={ROUTE_ROOT}
-                        >
-                            Steroids Dev
-                        </Link>
-                    </div>
-                </nav>
+                <NavBar
+                    logo={{
+                        title: 'Steroids',
+                        imageUrl: logoUrl,
+                        className: bem.element('logo'),
+                    }}
+                />
                 <div className={bem.element('content')}>
                     <Notifications/>
                     {this.renderContent()}

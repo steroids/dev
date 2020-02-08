@@ -3,7 +3,7 @@ module.exports = function (api) {
     return {
         plugins: [
             ['module-resolver', {
-                'root': ['./src'],
+                'root': ['./mobile/src'],
                 'alias': require('./metro.config').resolver.extraNodeModules,
             }],
         ],

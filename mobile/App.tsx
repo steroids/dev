@@ -1,6 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Router from "./src/router";
+import Router from './src/router';
 import {application} from '@steroidsjs/core/hoc';
 
 @application({
@@ -23,12 +22,3 @@ export default class App extends React.PureComponent {
         return <Router/>;
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

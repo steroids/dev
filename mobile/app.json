@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ts_rn_test_app",
-    "slug": "ts_rn_test_app",
+    "name": "Steroids React Native",
+    "slug": "steroids-react-native",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
@@ -11,9 +11,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./mobile/assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./mobile/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

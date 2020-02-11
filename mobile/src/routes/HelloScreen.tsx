@@ -29,6 +29,7 @@ export default class HelloScreen extends React.Component<IHelloScreenPrivateProp
                 <Button
                     mode="contained"
                     onPress={() => this.props.navigation.navigate(ROUTE_ANOTHER)}
+                    style={bem('btn btn-primary', bem.element('button'))}
                 >
                     Go to ANOTHER
                 </Button>

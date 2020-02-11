@@ -25,4 +25,4 @@ require('./steroids/react/webpack')
             ],
         },
     })
-    .base(__dirname + '/frontend/index.js');
+    .base(__dirname + '/frontend/index.tsx');

@@ -1,12 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import {Notifications} from '@steroidsjs/core/ui/layout';
-import layout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hoc/layout';
+import layout, {ILayoutHocOutput, STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hoc/layout';
 
 import {bem, components} from '@steroidsjs/core/hoc';
 import './Layout.scss';
-import NavBar from '@steroidsjs/core/ui/nav/NavBar';
 
-import logoUrl from 'static/logo-steroids.svg';
+import * as logoUrl from 'static/logo-steroids.svg';
+import {IComponentsHocOutput} from '@steroidsjs/core/hoc/components';
+import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
+import Header from '@steroidsjs/core/ui/layout/Header';
+import {ROUTE_ROOT} from '../../routes';
 
 @bem('Layout')
 @components('http')
@@ -16,7 +19,7 @@ import logoUrl from 'static/logo-steroids.svg';
     }),*/
     () => Promise.resolve({})
 )
-export default class Layout extends React.PureComponent {
+export default class Layout extends React.PureComponent<IBemHocOutput & IComponentsHocOutput & ILayoutHocOutput> {
 
     static propTypes = {
     };
@@ -25,11 +28,13 @@ export default class Layout extends React.PureComponent {
         const bem = this.props.bem;
         return (
             <div className={bem.block()}>
-                <NavBar
+                <Header
                     logo={{
                         title: 'Steroids',
-                        imageUrl: logoUrl,
-                        className: bem.element('logo'),
+                        logoUrl,
+                    }}
+                    nav={{
+                        items: ROUTE_ROOT,
                     }}
                 />
                 <div className={bem.element('content')}>

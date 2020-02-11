@@ -5,13 +5,18 @@
     "experimentalDecorators": true,
     "esModuleInterop": false,
     "lib": ["dom", "esnext"],
-    "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "reducers/*": [
+        "steroids/react/reducers/*"
+      ],
       "@steroidsjs/core/*": [
         "steroids/react/*"
+      ],
+      "@steroidsjs/native/*": [
+        "steroids/react-native/*"
       ]
     }
   }

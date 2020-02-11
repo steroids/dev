@@ -1,4 +1,4 @@
-import { createStackNavigator } from "react-navigation-stack";
+/*import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from 'react-navigation';
 import {createMaterialTopTabNavigator} from "react-navigation-tabs";
 import HelloScreen from "../screens/HelloScreen";
@@ -25,4 +25,30 @@ export default class Router extends React.PureComponent {
             },
         })
     })
-}
+}*/
+
+
+
+
+import AnotherScreen from './AnotherScreen';
+import HelloScreen from './HelloScreen';
+
+export const ROUTE_ROOT = 'root';
+export const ROUTE_HOME = 'home';
+export const ROUTE_ANOTHER = 'another';
+
+const roles = [null];
+
+export default {
+    id: ROUTE_ROOT,
+    exact: true,
+    roles,
+    items: {
+        [ROUTE_HOME]: {
+            component: HelloScreen,
+        },
+        [ROUTE_ANOTHER]: {
+            component: AnotherScreen,
+        },
+    },
+};

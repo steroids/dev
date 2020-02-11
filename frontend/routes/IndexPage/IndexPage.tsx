@@ -1,10 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import {bem} from '@steroidsjs/core/hoc';
 
 import './IndexPage.scss';
+import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 
 @bem('IndexPage')
-export default class IndexPage extends React.PureComponent {
+export default class IndexPage extends React.PureComponent<IBemHocOutput> {
 
     static propTypes = {};
 

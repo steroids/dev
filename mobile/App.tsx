@@ -1,9 +1,18 @@
 import React from 'react';
-import Router from './src/router';
 import {application} from '@steroidsjs/core/hoc';
+import NativeRouter from '@steroidsjs/native/ui/NativeRouter';
+import HtmlComponent from '@steroidsjs/native/components/HtmlComponent';
+
+import style from './style';
 
 @application({
-    onInit: ({ui}) => {
+    components: {
+        html: {
+            className: HtmlComponent,
+            ...style,
+        },
+    },
+    onInit: ({html, ui}) => {
         // Automatically import all views
         ui.addViews({
             'form.InputFieldView': require('./src/ui/form/InputField/InputFieldView'),
@@ -19,6 +28,8 @@ import {application} from '@steroidsjs/core/hoc';
 })
 export default class App extends React.PureComponent {
     render() {
-        return <Router/>;
+        return (
+            <NativeRouter routes={require('./src/routes').default}/>
+        );
     }
 }

@@ -1,9 +1,8 @@
-import AnotherScreen from './AnotherScreen';
-import HelloScreen from './HelloScreen';
+import HelloScreen from './HelloScreen/HelloScreen';
+import InputFieldScreen from './InputFieldScreen/InputFieldScreen';
 
-export const ROUTE_ROOT = 'root';
-export const ROUTE_HOME = 'home';
-export const ROUTE_ANOTHER = 'another';
+import {ROUTE_ROOT, ROUTE_HOME, ROUTE_INPUT_FIELD, ROUTE_BUTTON_FIELD} from "./routeNames";
+import ButtonScreen from "./ButtonScreen/ButtonScreen";
 
 const roles = [null];
 
@@ -15,8 +14,23 @@ export default {
         [ROUTE_HOME]: {
             component: HelloScreen,
         },
-        [ROUTE_ANOTHER]: {
-            component: AnotherScreen,
+        [ROUTE_INPUT_FIELD]: {
+            component: InputFieldScreen,
         },
+        [ROUTE_BUTTON_FIELD]: {
+            component: ButtonScreen,
+        }
     },
+    // TODO doesn't work
+    // drawer: [
+    //     {
+    //         id: ROUTE_INPUT_FIELD,
+    //         label: 'Input field'
+    //     },
+    //     {
+    //         id: ROUTE_BUTTON_FIELD,
+    //         label: 'Button'
+    //     },
+    //
+    // ]
 };

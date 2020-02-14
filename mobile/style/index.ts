@@ -1,19 +1,22 @@
-import {button, createVariables} from '@steroidsjs/native/style';
+import getStyles from '@steroidsjs/native/style';
 
-const variables = createVariables({
+// TODO not really convenient...
+import HelloScreenStyles from '../src/routes/HelloScreen/HelloScreenStyles';
+import InputFieldScreenStyles from '../src/routes/InputFieldScreen/InputFieldScreenStyles';
+import ButtonScreenStyles from '../src/routes/ButtonScreen/ButtonScreenStyles';
+
+const variables = {
     //primary: '#6610f2',
-});
+};
 
-let classes = {};
-classes = button(variables, classes);
+let classes = getStyles(variables);
 
 classes = {
     ...classes,
-
-    HelloScreen__button: {
-        //backgroundColor: '#f0f0f0',
-    }
-} ;
+    ...HelloScreenStyles,
+    ...InputFieldScreenStyles,
+    ...ButtonScreenStyles
+};
 
 export default {
     variables,

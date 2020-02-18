@@ -4,18 +4,18 @@ import getStyles from '@steroidsjs/native/style';
 import HelloScreenStyles from '../src/routes/HelloScreen/HelloScreenStyles';
 import InputFieldScreenStyles from '../src/routes/InputFieldScreen/InputFieldScreenStyles';
 import ButtonScreenStyles from '../src/routes/ButtonScreen/ButtonScreenStyles';
+import globals from "./globals";
 
-const variables = {
-    //primary: '#6610f2',
-};
+const myVariables = {};
 
-let classes = getStyles(variables);
+let {variables, classes} = getStyles(myVariables);
 
 classes = {
     ...classes,
     ...HelloScreenStyles,
     ...InputFieldScreenStyles,
-    ...ButtonScreenStyles
+    ...ButtonScreenStyles(variables, classes),
+    ...globals(variables, classes)
 };
 
 export default {

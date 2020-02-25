@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 75265,
-  "expoServerNgrokUrl": "https://yz-4q6.anonymous.steroids-dev.exp.direct",
-  "packagerNgrokUrl": "https://packager.yz-4q6.anonymous.steroids-dev.exp.direct",
-  "ngrokPid": 75275
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

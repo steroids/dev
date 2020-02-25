@@ -1,0 +1,16 @@
+@import 'style/variables';
+
+.ComponentsPage {
+  display: flex;
+  flex-direction: row;
+
+  &__tree {
+    padding: 15px;
+    width: 350px;
+    flex-shrink: 0;
+  }
+  &__content {
+    flex-grow: 1;
+    padding: 15px;
+  }
+}

@@ -62,7 +62,6 @@ export default class ApiTable extends React.PureComponent<IApiTableProps> {
         if (!interfaceDoc) {
             return null;
         }
-        console.log(345, interfaceDoc);
 
         return (
             <>

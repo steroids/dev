@@ -52,20 +52,20 @@ export default class ApiTable extends React.PureComponent<IApiTableProps> {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.renderRows(this.props.autoDocs.interfaces[this.props.name])}
+                    {this.renderRows(this.props.name, this.props.autoDocs.interfaces[this.props.name])}
                 </tbody>
             </table>
         );
     }
 
-    renderRows(interfaceDoc: IInterfaceDoc) {
+    renderRows(name: string, interfaceDoc: IInterfaceDoc) {
         if (!interfaceDoc) {
             return null;
         }
 
         return (
             <>
-                <tr>
+                <tr key={`${name}-title`}>
                     <td
                         className='table-secondary'
                         colSpan={4}
@@ -90,7 +90,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps> {
                     </tr>
                 ))}
                 {(interfaceDoc.extends || []).map(extendName => (
-                    this.renderRows(this.props.autoDocs.interfaces[extendName])
+                    this.renderRows(extendName, this.props.autoDocs.interfaces[extendName])
                 ))}
             </>
         );

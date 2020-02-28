@@ -31,6 +31,6 @@ cp config.sample.php config.php
 ## Генерация/обновление документации (typedoc)
 
 ```sh
-node steroids/react/docs/autogen.js
+yarn docs
 ```
 

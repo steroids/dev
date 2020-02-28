@@ -92,9 +92,6 @@ export default class ComponentsPage extends React.PureComponent<IComponentsPageP
     }
 
     render() {
-        console.log('---props', this.props);
-        console.log('---state', this.state);
-
         const bem = this.props.bem;
         return (
             <div className={bem.block()}>

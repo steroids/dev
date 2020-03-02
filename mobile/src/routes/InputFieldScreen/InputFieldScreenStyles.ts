@@ -1,7 +1,11 @@
-export default {
-    InputField__title: {
-        paddingTop: 10,
-        paddingBottom: 5,
-        paddingLeft: 5
-    }
-}
+export default (variables, classes) => {
+    classes = {
+        ...classes,
+
+        'InputFieldScreen__input': {
+            marginBottom: 10
+        }
+    };
+
+    return classes;
+};

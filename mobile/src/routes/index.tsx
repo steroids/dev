@@ -21,7 +21,6 @@ export default {
             component: ButtonScreen,
         }
     },
-    // TODO doesn't work
     // drawer: [
     //     {
     //         id: ROUTE_INPUT_FIELD,

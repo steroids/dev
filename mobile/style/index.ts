@@ -13,8 +13,6 @@ let {variables, classes} = getStyles(myVariables);
 classes = {
     ...classes,
     ...HelloScreenStyles,
-    ...InputFieldScreenStyles,
-    ...ButtonScreenStyles(variables, classes),
     ...globals(variables, classes)
 };
 

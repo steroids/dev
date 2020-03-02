@@ -86,6 +86,7 @@
     "react-modal": "^3.6.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-gesture-handler": "~1.5.0",
+    "react-native-input-scroll-view": "^1.9.5",
     "react-native-paper": "^3.6.0",
     "react-native-reanimated": "~1.4.0",
     "react-native-safe-area-context": "0.6.0",

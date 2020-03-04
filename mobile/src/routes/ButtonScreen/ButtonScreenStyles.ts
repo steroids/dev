@@ -4,10 +4,6 @@ export default (variables, classes) => {
 
         'ButtonScreen__button': {
             marginBottom: 10,
-
-            'ButtonView_outline': {
-                borderWidth: 5
-            },
         },
         'ButtonScreen__row': {
             flexDirection: 'row',

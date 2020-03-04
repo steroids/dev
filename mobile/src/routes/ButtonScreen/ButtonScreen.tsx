@@ -110,7 +110,30 @@ export default class ButtonScreen extends React.Component<IButtonScreenPrivatePr
                 </View>
                 <View>
                     <Text style={bem('h5', bem.element('title'))}>Icon</Text>
-                    <Button icon={require("../../../assets/icon.png")}  color={'pink'} onClick={() => this.async()}>
+                    <Button
+                        style={bem.element('button')}
+                        icon={require("../../../assets/icon.png")}
+                        size={'sm'}
+                        color={'pink'}
+                        onClick={() => this.async()}
+                    >
+                        Icon
+                    </Button>
+                    <Button
+                        style={bem.element('button')}
+                        icon={require("../../../assets/icon.png")}
+                        color={'pink'}
+                        onClick={() => this.async()}
+                    >
+                        Icon
+                    </Button>
+                    <Button
+                        style={bem.element('button')}
+                        icon={require("../../../assets/icon.png")}
+                        size={'lg'}
+                        color={'pink'}
+                        onClick={() => this.async()}
+                    >
                         Icon
                     </Button>
                 </View>

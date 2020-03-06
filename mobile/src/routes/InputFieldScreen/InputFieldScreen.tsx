@@ -51,25 +51,24 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                         <InputField
                             size={'sm'}
                             style={bem(bem.element('input'))}
-                            icon={require("../../../assets/icon.png")}
+                            prefixElement={require("../../../assets/icon.png")}
                         />
                         <InputField
                             size={'md'}
                             style={bem(bem.element('input'))}
-                            icon={require("../../../assets/icon.png")}
+                            suffixElement={require("../../../assets/icon.png")}
                         />
                         <InputField
                             size={'lg'}
                             style={bem(bem.element('input'))}
-                            icon={require("../../../assets/icon.png")}
-                            iconPosition={'left'}
+                            suffixElement={require("../../../assets/icon.png")}
+                            prefixElement={require("../../../assets/icon.png")}
                         />
                         <InputField
                             size={'lg'}
                             style={bem(bem.element('input'))}
-                            icon={<ClickableIcon/>}
+                            prefixElement={<ClickableIcon/>}
                             placeholder={'<--- This is clickable'}
-                            iconPosition={'left'}
                         />
                     </View>
                     <View>
@@ -130,6 +129,13 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                         <InputField
                             size={'lg'}
                             style={bem(bem.element('input'))}
+                        />
+                    </View>
+                    <View>
+                        <Text style={bem('h5')}>Multiline</Text>
+                        <InputField
+                            style={bem(bem.element('input'))}
+                            multiline={4}
                         />
                     </View>
                     <View>

@@ -68,7 +68,7 @@
     "lodash-es": "^4.17.15",
     "mini-css-extract-plugin": "^0.4.2",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "path-to-regexp": "^3.0.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.8.1",
@@ -120,5 +120,10 @@
   },
   "optionalDependencies": {
     "fsevents": "^1.2.9"
+  },
+  "devDependencies": {
+    "babel-plugin-react-native-classname-to-style": "^1.2.2",
+    "babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
+    "react-native-sass-transformer": "^1.4.0"
   }
 }

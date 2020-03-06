@@ -4,13 +4,15 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {bem} from '@steroidsjs/core/hoc';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 import Button from '@steroidsjs/core/ui/form/Button';
-import styles from './ButtonScreenStyles';
+// @ts-ignore
+import styles from './ButtonScreenStyles.scss';
 
+console.log('STYLES', styles);
 interface IButtonScreenPrivateProps extends IBemHocOutput {
     navigation: StackNavigationProp<any, any>,
 }
 
-@bem('ButtonScreen', styles)
+@bem('ButtonScreen')
 export default class ButtonScreen extends React.Component<IButtonScreenPrivateProps> {
     static navigationOptions = {
         title: 'Button',

@@ -1,9 +1,17 @@
-module.exports = {
-    resolver: {
-        extraNodeModules: {
-            'reducers': __dirname + '/mobile/src/reducers',
-            '@steroidsjs/core': __dirname + '/steroids/react',
-            '@steroidsjs/native': __dirname + '/steroids/react-native',
+const { getDefaultConfig } = require("metro-config");
+
+module.exports = (async () => {
+    const {
+        resolver: { sourceExts }
+    } = await getDefaultConfig();
+
+    console.log("SOURCE EXTS", sourceExts);
+    return {
+        transformer: {
+            babelTransformerPath: require.resolve("react-native-sass-transformer")
+        },
+        resolver: {
+            sourceExts: [...sourceExts, "scss", "sass"]
         }
-    },
-};
+    };
+})();

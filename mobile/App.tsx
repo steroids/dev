@@ -18,6 +18,7 @@ import style from './style';
             'form.InputFieldView': require('@steroidsjs/native/ui/form/InputField/InputFieldView').default,
             'form.FieldLayoutView': require('@steroidsjs/native/ui/form/FieldLayout/FieldLayoutView').default,
             'form.ButtonView': require('@steroidsjs/native/ui/form/Button/ButtonView').default,
+            'form.DropDownFieldView': require('@steroidsjs/native/ui/form/DropDownField/DropDownFieldView').default,
         });
         /*ui.addViews(require.context('@steroidsjs/bootstrap', true, /View.js$/));
         ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field.js$/));

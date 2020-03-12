@@ -38,7 +38,7 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                         <Text style={bem('h5')}>Label</Text>
                         <InputField
                             style={bem(bem.element('input'))}
-                            label={'This is a input label'}
+                            label={'This is an input label'}
                         />
                         <InputField
                             style={bem(bem.element('input'))}

@@ -1,8 +1,9 @@
 import HelloScreen from './HelloScreen/HelloScreen';
 import InputFieldScreen from './InputFieldScreen/InputFieldScreen';
 
-import {ROUTE_ROOT, ROUTE_HOME, ROUTE_INPUT_FIELD, ROUTE_BUTTON_FIELD} from "./routeNames";
+import {ROUTE_ROOT, ROUTE_HOME, ROUTE_INPUT_FIELD, ROUTE_BUTTON_FIELD, ROUTE_DROPDOWN} from "./routeNames";
 import ButtonScreen from "./ButtonScreen/ButtonScreen";
+import DropDownScreen from "./DropDownScreen/DropDownScreen";
 
 const roles = [null];
 
@@ -19,6 +20,9 @@ export default {
         },
         [ROUTE_BUTTON_FIELD]: {
             component: ButtonScreen,
+        },
+        [ROUTE_DROPDOWN]: {
+            component: DropDownScreen,
         }
     },
     // drawer: [

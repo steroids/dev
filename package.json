@@ -6,7 +6,8 @@
   "scripts": {
     "mobile": "expo start --config mobile/app.json",
     "frontend": "node webpack.js",
-    "gii": "node webpack.js"
+    "gii": "node webpack.js",
+    "docs": "node steroids/react/docs/autogen.js"
   },
   "dependencies": {
     "@babel/core": "7.6.4",

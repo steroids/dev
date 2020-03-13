@@ -39,6 +39,7 @@
     "bootstrap": "^4.3.1",
     "cache-loader": "^2.0.1",
     "color": "^3.1.2",
+    "conditional-decorator": "^0.1.7",
     "connected-react-router": "^6.5.2",
     "core-js": "^2.6.10",
     "css-hot-loader": "^1.4.4",

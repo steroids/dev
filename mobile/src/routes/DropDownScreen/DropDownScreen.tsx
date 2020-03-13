@@ -2,15 +2,10 @@ import React from "react";
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {bem} from '@steroidsjs/core/hoc';
 import {DropDownField} from "@steroidsjs/core/ui/form";
+import styles from './DropDownScreenStyles';
 
-
-interface IState {
-    visible: Boolean,
-    picked: Boolean
-}
-
-@bem('DropDownScreen')
-export default class HelloScreen extends React.Component<any, IState> {
+@bem('DropDownScreen', styles)
+export default class DropDownScreen extends React.Component<any> {
     constructor (props, ctx) {
         super(props, ctx);
 
@@ -35,32 +30,8 @@ export default class HelloScreen extends React.Component<any, IState> {
     ];
 
     render() {
-        const { visible, picked } = this.state;
-
-        const options = [
-            {
-                key: 'kenya',
-                label: 'Kenya',
-            },
-            {
-                key: 'uganda',
-                label: 'Uganda',
-            },
-            {
-                key: 'libya',
-                label: 'Libya',
-            },
-            {
-                key: 'morocco',
-                label: 'Morocco',
-            },
-            {
-                key: 'estonia',
-                label: 'Estonia',
-            },
-        ];
-
         const bem = this.props.bem;
+
         return (
             <View>
                 <ScrollView style={bem('screen')}>
@@ -69,14 +40,12 @@ export default class HelloScreen extends React.Component<any, IState> {
                         <Text style={bem('h5')}>Regular</Text>
                         <DropDownField
                             items={this.items}
-                            selectedItems={[]}
                         />
                     </View>
                     <View>
                         <Text style={bem('h5')}>Multiple</Text>
                         <DropDownField
                             items={this.items}
-                            selectedItems={[]}
                             multiple={true}
                         />
                     </View>
@@ -84,7 +53,6 @@ export default class HelloScreen extends React.Component<any, IState> {
                         <Text style={bem('h5')}>Invalid</Text>
                         <DropDownField
                             items={this.items}
-                            selectedItems={[]}
                             errors={[
                                 'error #1',
                                 'error #2',
@@ -95,9 +63,25 @@ export default class HelloScreen extends React.Component<any, IState> {
                         <Text style={bem('h5')}>Required</Text>
                         <DropDownField
                             items={this.items}
-                            selectedItems={[]}
                             label={'Required to fill'}
                             required={true}
+                        />
+                    </View>
+                    <View>
+                        <Text style={bem('h5')}>Sizing</Text>
+                        <DropDownField
+                            style={{marginBottom: 10}}
+                            items={this.items}
+                            size={'sm'}
+                        />
+                        <DropDownField
+                            style={{marginBottom: 10}}
+                            items={this.items}
+                            size={'md'}
+                        />
+                        <DropDownField
+                            items={this.items}
+                            size={'lg'}
                         />
                     </View>
                     <View>
@@ -105,7 +89,6 @@ export default class HelloScreen extends React.Component<any, IState> {
                         <DropDownField
                             items={this.items}
                             selectedItems={[this.items[0]]}
-                            multiple={true}
                             showReset={true}
                         />
                     </View>
@@ -113,7 +96,6 @@ export default class HelloScreen extends React.Component<any, IState> {
                         <Text style={bem('h5')}>Disabled</Text>
                         <DropDownField
                             items={this.items}
-                            selectedItems={[]}
                             disabled={true}
                         />
                     </View>

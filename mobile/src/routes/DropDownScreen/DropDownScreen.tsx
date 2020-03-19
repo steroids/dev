@@ -1,20 +1,12 @@
 import React from "react";
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import {bem} from '@steroidsjs/core/hoc';
 import {DropDownField} from "@steroidsjs/core/ui/form";
 import styles from './DropDownScreenStyles';
+import {IBemHocOutput} from "@steroidsjs/core/hoc/bem";
 
 @bem('DropDownScreen', styles)
-export default class DropDownScreen extends React.Component<any> {
-    constructor (props, ctx) {
-        super(props, ctx);
-
-        this.state = {
-            visible: false,
-            picked: null,
-        };
-    }
-
+export default class DropDownScreen extends React.Component<IBemHocOutput> {
     items = [
         {id: 1, label: 'First'},
         {id: 2, label: 'Second'},
@@ -31,7 +23,6 @@ export default class DropDownScreen extends React.Component<any> {
 
     render() {
         const bem = this.props.bem;
-
         return (
             <View>
                 <ScrollView style={bem('screen')}>
@@ -60,7 +51,12 @@ export default class DropDownScreen extends React.Component<any> {
                         />
                     </View>
                     <View>
-                        <Text style={bem('h5')}>Required</Text>
+                        <Text style={bem('h5')}>Label</Text>
+                        <DropDownField
+                            items={this.items}
+                            label={'A regular label'}
+                            style={{marginBottom: 10}}
+                        />
                         <DropDownField
                             items={this.items}
                             label={'Required to fill'}

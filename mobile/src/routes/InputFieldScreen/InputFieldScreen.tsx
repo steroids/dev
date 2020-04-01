@@ -83,7 +83,8 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                         <InputField
                             style={bem(bem.element('input'))}
                             errors={[
-                                'There you can see error detailed info'
+                                'Error #1',
+                                'Error #1',
                             ]}
                         />
                     </View>
@@ -105,15 +106,13 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                         <Text style={bem('h5')}>Horizontal layout</Text>
                         <InputField
                             style={bem(bem.element('input'))}
-                            layout={'horizontal'}
+                            layout={{layout: 'horizontal', cols: [7, 5]}}
                             label={'Long variant of label'}
-                            layoutProps={{cols: [7, 5]}}
                         />
                         <InputField
                             style={bem(bem.element('input'))}
-                            layout={'horizontal'}
+                            layout={{layout: 'horizontal', cols: [4, 8]}}
                             label={'Short label'}
-                            layoutProps={{cols: [4, 8]}}
                         />
                     </View>
                     <View>

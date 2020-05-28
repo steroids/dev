@@ -1,4 +1,10 @@
 @import 'style/variables';
 
 .ApiTable {
+  font-size: $font-size-sm;
+  &__row {
+    &_sub {
+      border-left: solid 2px $primary;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-require('./steroids/react/webpack')
+require('./steroids/react-webpack')
     .config({
         port: 9991,
         sourcePath: __dirname + '/frontend',

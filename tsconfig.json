@@ -19,5 +19,9 @@
         "steroids/react-native/*"
       ]
     }
-  }
+  },
+  "exclude": [
+    "steroids/react-native/*",
+    "mobile/*"
+  ]
 }

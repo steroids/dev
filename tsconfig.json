@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
     "experimentalDecorators": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "lib": ["dom", "esnext"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
@@ -21,7 +21,7 @@
     }
   },
   "exclude": [
-    "steroids/react-native/*",
-    "mobile/*"
+    "mobile/*",
+    "steroids/react-native/*"
   ]
 }

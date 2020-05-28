@@ -15,9 +15,13 @@ import style from './style';
     onInit: ({html, ui}) => {
         // Automatically import all views
         ui.addViews({
-            'form.InputFieldView': require('@steroidsjs/native/ui/form/InputField/InputFieldView').default,
-            'form.FieldLayoutView': require('@steroidsjs/native/ui/form/FieldLayout/FieldLayoutView').default,
-            'form.ButtonView': require('@steroidsjs/native/ui/form/Button/ButtonView').default,
+            'form.InputFieldView': require('@steroidsjs/native/ui/form/InputField').default,
+            'form.FieldLayoutView': require('@steroidsjs/native/ui/form/FieldLayout').default,
+            'form.ButtonView': require('@steroidsjs/native/ui/form/Button').default,
+            'form.DropDownFieldView': require('@steroidsjs/native/ui/form/DropDownField').default,
+            'form.DateFieldView': require('@steroidsjs/native/ui/form/DateField').default,
+            'form.TimeFieldView': require('@steroidsjs/native/ui/form/TimeField').default,
+            'form.DateTimeFieldView': require('@steroidsjs/native/ui/form/DateTimeField').default,
         });
         /*ui.addViews(require.context('@steroidsjs/bootstrap', true, /View.js$/));
         ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field.js$/));

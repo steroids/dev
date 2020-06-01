@@ -45,3 +45,5 @@ public/assets/*
 !.gitempty
 
 dev/userstory
+.cache-loader
+.phpunit.result.cache

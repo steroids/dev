@@ -12,6 +12,7 @@ class M200528092512User extends Migration
             'id' => $this->primaryKey(),
             'role' => $this->string(),
             'username' => $this->string(),
+            'login' => $this->string(),
             'email' => $this->string(),
             'phone' => $this->string(),
             'passwordHash' => $this->text(),

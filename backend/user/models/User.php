@@ -19,4 +19,13 @@ class User extends UserMeta implements UserInterface
     {
         // TODO
     }
+
+    /**
+     * @param string $email
+     * @return User|null
+     */
+    public static function findByEmail($email)
+    {
+        return static::findOne(['email' => $email]);
+    }
 }

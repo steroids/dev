@@ -64,10 +64,10 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
         return (
             <table className={bem('table table-bordered table-striped', bem.block())}>
                 <colgroup>
+                    <col width={50}/>
                     <col width={250}/>
                     <col/>
-                    <col width={250}/>
-                    <col width={150}/>
+                    <col width={200}/>
                     <col width={150}/>
                 </colgroup>
                 <thead>
@@ -202,7 +202,10 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
                     {item.description}
                 </td>
                 <td>
-                    <code>{item.type}</code>
+                    <code>
+                        {item.name}
+                        ({item.type})
+                    </code>
                 </td>
                 <td>
                     <code>{defaultValue}</code>

@@ -158,6 +158,13 @@ export default class ComponentsPage extends React.PureComponent<IComponentsPageP
     renderDemo(name, component) {
         const path = this.props.match.params.path.split('-');
         const docs = _get(autoDocs.demos, path.concat(name)) || {};
+
+        const componentPath = this.props.match.params.path;
+        let githubUrl = '';
+        if (componentPath.split('-')[1] === 'Button') {
+            githubUrl = getGithubUrl(componentPath.replace('-', '/'), name)
+        }
+
         return (
             <div
                 key={name}
@@ -165,6 +172,7 @@ export default class ComponentsPage extends React.PureComponent<IComponentsPageP
             >
                 <DemoCard
                     name={name}
+                    githubUrl={githubUrl}
                     title={docs && docs.title || _upperFirst(name)}
                     description={docs && docs.description || null}
                     component={component}
@@ -173,4 +181,8 @@ export default class ComponentsPage extends React.PureComponent<IComponentsPageP
         );
     }
 
+}
+
+function getGithubUrl(componentPath: string, exampleName: string) {
+    return `https://github.com/steroids/react/blob/master/ui/${componentPath}/demo/${exampleName}.tsx`;
 }

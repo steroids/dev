@@ -9,6 +9,7 @@ interface IDemoCardProps extends IBemHocOutput {
     title: string,
     description: string,
     component: React.ComponentType,
+    githubUrl: string,
 }
 
 interface IDemoCardState {
@@ -32,6 +33,23 @@ export default class DemoCard extends React.PureComponent<IDemoCardProps, IDemoC
         };
     }
 
+    renderGithubUrl() {
+        if (!this.props.githubUrl) {
+            return null;
+        }
+        return (
+            <div style={{marginLeft: 'auto'}}>
+                <div>
+                    <a
+                        target={'_blank'}
+                        href={this.props.githubUrl}>
+                        Github
+                    </a>
+                </div>
+            </div>
+        );
+    }
+
     render() {
         const bem = this.props.bem;
         const DemoComponent = this.props.component;
@@ -39,9 +57,12 @@ export default class DemoCard extends React.PureComponent<IDemoCardProps, IDemoC
             <div className={bem.block()}>
                 <div className='card mb-4'>
                     <div className={bem('card-body', bem.element('content'))}>
-                        <h6 className='card-title'>
-                            {this.props.title}
-                        </h6>
+                        <div className='row'>
+                            <h6 className='card-title'>
+                                {this.props.title}
+                            </h6>
+                            {this.renderGithubUrl()}
+                        </div>
                         {this.props.description && (
                             <p className='card-text'>{this.props.description}</p>
                         )}

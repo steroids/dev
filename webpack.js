@@ -4,6 +4,7 @@ require('./steroids/react-webpack')
         sourcePath: __dirname + '/frontend',
         staticPath: '',
         baseUrl: 'frontend/',
+        inlineSvg: true,
         webpack: {
             resolve: {
                 alias: {

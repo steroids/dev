@@ -10,6 +10,7 @@ use \Yii;
  * @property string $id
  * @property string $role
  * @property string $username
+ * @property string $login
  * @property string $email
  * @property string $phone
  * @property string $passwordHash
@@ -36,7 +37,7 @@ abstract class UserMeta extends Model
     public function rules()
     {
         return array_merge(parent::rules(), [
-            [['role', 'username', 'email'], 'string', 'max' => 255],
+            [['role', 'username', 'email', 'login'], 'string', 'max' => 255],
             ['email', 'email'],
             ['phone', 'string', 'max' => 32],
             ['passwordHash', 'string'],
@@ -63,6 +64,10 @@ abstract class UserMeta extends Model
             'role' => [
                 'label' => Yii::t('app', 'Роль'),
                 'isPublishToFrontend' => false
+            ],
+            'login' => [
+                'label' => Yii::t('app', 'Login'),
+                'isPublishToFrontend' => true
             ],
             'username' => [
                 'isPublishToFrontend' => true

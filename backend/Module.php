@@ -1,9 +1,7 @@
 <?php
 
-namespace app\;
+namespace app;
 
-use steroids\core\base\Module;
-
-class Module extends Module
+class Module extends \steroids\core\base\Module
 {
 }

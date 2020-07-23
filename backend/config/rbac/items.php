@@ -324,12 +324,13 @@ return [
             'm::steroids\\auth\\models\\AuthConfirm::delete',
             'm::steroids\\auth\\models\\AuthConfirm::id',
             'm::steroids\\auth\\models\\AuthConfirm::userId',
-            'm::steroids\\auth\\models\\AuthConfirm::email',
             'm::steroids\\auth\\models\\AuthConfirm::code',
             'm::steroids\\auth\\models\\AuthConfirm::isConfirmed',
             'm::steroids\\auth\\models\\AuthConfirm::createTime',
             'm::steroids\\auth\\models\\AuthConfirm::updateTime',
             'm::steroids\\auth\\models\\AuthConfirm::expireTime',
+            'm::steroids\\auth\\models\\AuthConfirm::value',
+            'm::steroids\\auth\\models\\AuthConfirm::type',
         ],
     ],
     'm::steroids\\auth\\models\\AuthConfirm::view' => [
@@ -377,27 +378,6 @@ return [
         'description' => 'create',
     ],
     'm::steroids\\auth\\models\\AuthConfirm::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::email' => [
-        'type' => 2,
-        'description' => 'email',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::email::view',
-            'm::steroids\\auth\\models\\AuthConfirm::email::create',
-            'm::steroids\\auth\\models\\AuthConfirm::email::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::email::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::email::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::email::update' => [
         'type' => 2,
         'description' => 'update',
     ],
@@ -883,5 +863,263 @@ return [
     'm::steroids\\auth\\models\\AuthSocial::profileJson::update' => [
         'type' => 2,
         'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::value' => [
+        'type' => 2,
+        'description' => 'value',
+        'children' => [
+            'm::steroids\\auth\\models\\AuthConfirm::value::view',
+            'm::steroids\\auth\\models\\AuthConfirm::value::create',
+            'm::steroids\\auth\\models\\AuthConfirm::value::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::value::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::value::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::value::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::type' => [
+        'type' => 2,
+        'description' => 'type',
+        'children' => [
+            'm::steroids\\auth\\models\\AuthConfirm::type::view',
+            'm::steroids\\auth\\models\\AuthConfirm::type::create',
+            'm::steroids\\auth\\models\\AuthConfirm::type::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::type::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::type::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::type::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User' => [
+        'type' => 2,
+        'description' => 'app\\user\\models\\User',
+        'children' => [
+            'm::app\\user\\models\\User::view',
+            'm::app\\user\\models\\User::create',
+            'm::app\\user\\models\\User::update',
+            'm::app\\user\\models\\User::delete',
+            'm::app\\user\\models\\User::id',
+            'm::app\\user\\models\\User::role',
+            'm::app\\user\\models\\User::username',
+            'm::app\\user\\models\\User::email',
+            'm::app\\user\\models\\User::phone',
+            'm::app\\user\\models\\User::passwordHash',
+            'm::app\\user\\models\\User::uiLanguage',
+            'm::app\\user\\models\\User::isBanned',
+            'm::app\\user\\models\\User::createTime',
+            'm::app\\user\\models\\User::updateTime',
+        ],
+    ],
+    'm::app\\user\\models\\User::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::app\\user\\models\\User::id' => [
+        'type' => 2,
+        'description' => 'id',
+        'children' => [
+            'm::app\\user\\models\\User::id::view',
+        ],
+    ],
+    'm::app\\user\\models\\User::id::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::role' => [
+        'type' => 2,
+        'description' => 'role',
+        'children' => [
+            'm::app\\user\\models\\User::role::view',
+            'm::app\\user\\models\\User::role::create',
+            'm::app\\user\\models\\User::role::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::role::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::role::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::role::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::username' => [
+        'type' => 2,
+        'description' => 'username',
+        'children' => [
+            'm::app\\user\\models\\User::username::view',
+            'm::app\\user\\models\\User::username::create',
+            'm::app\\user\\models\\User::username::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::username::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::username::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::username::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::email' => [
+        'type' => 2,
+        'description' => 'email',
+        'children' => [
+            'm::app\\user\\models\\User::email::view',
+            'm::app\\user\\models\\User::email::create',
+            'm::app\\user\\models\\User::email::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::email::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::email::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::email::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::phone' => [
+        'type' => 2,
+        'description' => 'phone',
+        'children' => [
+            'm::app\\user\\models\\User::phone::view',
+            'm::app\\user\\models\\User::phone::create',
+            'm::app\\user\\models\\User::phone::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::phone::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::phone::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::phone::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::passwordHash' => [
+        'type' => 2,
+        'description' => 'passwordHash',
+        'children' => [
+            'm::app\\user\\models\\User::passwordHash::view',
+            'm::app\\user\\models\\User::passwordHash::create',
+            'm::app\\user\\models\\User::passwordHash::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::passwordHash::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::passwordHash::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::passwordHash::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::uiLanguage' => [
+        'type' => 2,
+        'description' => 'uiLanguage',
+        'children' => [
+            'm::app\\user\\models\\User::uiLanguage::view',
+            'm::app\\user\\models\\User::uiLanguage::create',
+            'm::app\\user\\models\\User::uiLanguage::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::uiLanguage::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::uiLanguage::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::uiLanguage::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::isBanned' => [
+        'type' => 2,
+        'description' => 'isBanned',
+        'children' => [
+            'm::app\\user\\models\\User::isBanned::view',
+            'm::app\\user\\models\\User::isBanned::create',
+            'm::app\\user\\models\\User::isBanned::update',
+        ],
+    ],
+    'm::app\\user\\models\\User::isBanned::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::isBanned::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\user\\models\\User::isBanned::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\user\\models\\User::createTime' => [
+        'type' => 2,
+        'description' => 'createTime',
+        'children' => [
+            'm::app\\user\\models\\User::createTime::view',
+        ],
+    ],
+    'm::app\\user\\models\\User::createTime::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\user\\models\\User::updateTime' => [
+        'type' => 2,
+        'description' => 'updateTime',
+        'children' => [
+            'm::app\\user\\models\\User::updateTime::view',
+        ],
+    ],
+    'm::app\\user\\models\\User::updateTime::view' => [
+        'type' => 2,
+        'description' => 'view',
     ],
 ];

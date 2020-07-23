@@ -11,11 +11,16 @@
 
 ```bash
 mkdir -p steroids
+git clone https://github.com/steroids/auth
 git clone https://github.com/steroids/core
+git clone https://github.com/steroids/file
 git clone https://github.com/steroids/gii
+git clone https://github.com/steroids/notifier
 git clone https://github.com/steroids/react
+git clone https://github.com/steroids/react-admin
 git clone https://github.com/steroids/react-bootstrap
 git clone https://github.com/steroids/react-native
+git clone https://github.com/steroids/react-webpack
 ```
 
 ### 2. Конфигурация

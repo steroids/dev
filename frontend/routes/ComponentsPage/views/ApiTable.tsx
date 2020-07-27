@@ -203,8 +203,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
                 </td>
                 <td>
                     <code>
-                        {item.name}
-                        ({item.type})
+                        {item.type}
                     </code>
                 </td>
                 <td>

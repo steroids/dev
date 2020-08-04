@@ -4,7 +4,7 @@ import Router from '@steroidsjs/core/ui/nav/Router';
 import {application} from '@steroidsjs/core/hoc';
 
 import 'style/index.scss';
-import {getFontAwesomeIcons} from "../steroids/react-bootstrap/icon/fontawesome-icons";
+import icons from '../steroids/react-bootstrap/icon/fontawesome';
 
 @hot(module)
 @application({
@@ -13,7 +13,7 @@ import {getFontAwesomeIcons} from "../steroids/react-bootstrap/icon/fontawesome-
         ui.addViews(require.context('@steroidsjs/bootstrap', true, /View\.(j|t)sx?$/));
         ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field\.(j|t)sx?$/));
         ui.addFormatters(require.context('@steroidsjs/bootstrap', true, /Formatter\.(j|t)sx?$/));
-        ui.addIcons(getFontAwesomeIcons())
+        ui.addIcons(icons)
 
         // Automatically import all fields and formatters from steroids
         ui.addFields(require.context('@steroidsjs/core/ui', true, /Field.(j|t)sx?$/));

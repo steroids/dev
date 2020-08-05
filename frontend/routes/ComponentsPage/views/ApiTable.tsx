@@ -65,8 +65,8 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
             <table className={bem('table table-bordered table-striped', bem.block())}>
                 <colgroup>
                     <col width={50}/>
+                    <col width={350}/>
                     <col width={250}/>
-                    <col/>
                     <col width={200}/>
                     <col width={150}/>
                 </colgroup>
@@ -176,6 +176,24 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
         }
         if (defaultValue !== null && defaultValue !== undefined) {
             defaultValue = JSON.stringify(defaultValue, null, '  ');
+        }
+
+        // if interface has 1 declaration we print his declaration instead interface
+        if (subDeclarations.length == 1) {
+            const firstSubDeclareType = subDeclarations[0];
+            const subType = this.props.autoDocs.declarations[firstSubDeclareType]
+            const existNextSubDeclarations = subType.type.split('|')
+                .map(type => type.trim())
+                .filter(type => !!this.props.autoDocs.declarations[type]);
+            if (!_isEmpty(subDeclarations) && _isEmpty(existNextSubDeclarations) && level === 0) {
+                let subTypeClone = {
+                    type: null,
+                };
+                //clone object
+                Object.assign(subTypeClone, subType);
+                subTypeClone.type = `${firstSubDeclareType}(${subType.type})`;
+                return this.renderRow(category, moduleName, id + '-' + firstSubDeclareType, subTypeClone, 0);
+            }
         }
 
         const bem = this.props.bem;

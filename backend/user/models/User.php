@@ -28,4 +28,9 @@ class User extends UserMeta implements UserInterface
     {
         return static::findOne(['email' => $email]);
     }
+
+    public function getName()
+    {
+        // TODO: Implement getName() method.
+    }
 }

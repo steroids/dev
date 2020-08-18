@@ -160,10 +160,7 @@ export default class ComponentsPage extends React.PureComponent<IComponentsPageP
         const docs = _get(autoDocs.demos, path.concat(name)) || {};
 
         const componentPath = this.props.match.params.path;
-        let githubUrl = '';
-        if (componentPath.split('-')[1] === 'Button') {
-            githubUrl = getGithubUrl(componentPath.replace('-', '/'), name)
-        }
+        const githubUrl = getGithubUrl(componentPath.replace('-', '/'), name)
 
         return (
             <div

@@ -4,20 +4,14 @@ import Router from '@steroidsjs/core/ui/nav/Router';
 import {application} from '@steroidsjs/core/hoc';
 
 import 'style/index.scss';
-import {getFontAwesomeIcons} from "../steroids/react-bootstrap/icon/fontawesome-icons";
 
 @hot(module)
 @application({
     onInit: ({ui}) => {
-        // Automatically import all views
-        ui.addViews(require.context('@steroidsjs/bootstrap', true, /View\.(j|t)sx?$/));
-        ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field\.(j|t)sx?$/));
-        ui.addFormatters(require.context('@steroidsjs/bootstrap', true, /Formatter\.(j|t)sx?$/));
-        ui.addIcons(getFontAwesomeIcons())
-
-        // Automatically import all fields and formatters from steroids
-        ui.addFields(require.context('@steroidsjs/core/ui', true, /Field.(j|t)sx?$/));
-        ui.addFormatters(require.context('@steroidsjs/core/ui', true, /Formatter.(j|t)sx?$/));
+        ui.addViews(require('@steroidsjs/bootstrap').default);
+        ui.addFields(require('@steroidsjs/core/ui/form').default);
+        ui.addFormatters(require('@steroidsjs/core/ui/format').default);
+        ui.addIcons(require('@steroidsjs/bootstrap/icon/fontawesome').default);
     },
 })
 export default class Application extends React.PureComponent {

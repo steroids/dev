@@ -27,10 +27,11 @@ build:
     - |
       for REPO in $STEROIDS_REPOS; do
         if [ -d steroids/$REPO ]; then
-          git --git-dir=steroids/$REPO pull
+          cd $CI_PROJECT_DIR/$REPO && git pull
         else
           git clone https://github.com/steroids/$REPO steroids/$REPO
         fi
+        cd $CI_PROJECT_DIR
       done
     - composer --no-interaction --no-progress --prefer-dist install
     - yarn

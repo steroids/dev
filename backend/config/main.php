@@ -14,6 +14,11 @@ return Boot::getMainConfig([
             'password' => '',
         ],
     ],
+    'modules' => [
+        'auth' => [
+            'userClass' => '\app\user\models\User',
+        ],
+    ],
     'params' => [
         'adminEmail' => '',
     ],

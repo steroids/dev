@@ -10,7 +10,7 @@ jobs:
       - name: Mirror + trigger CI
         uses: SvanBoxel/gitlab-mirror-and-ci-action@master
         with:
-          args: "https://gitlab.kozhindev.com/internal/yii-steroids"
+          args: "https://gitlab.kozhindev.com/steroids/dev"
         env:
           GITLAB_HOSTNAME: "gitlab.kozhindev.com"
           GITLAB_USERNAME: "github-action"

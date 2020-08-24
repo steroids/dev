@@ -1,19 +1,18 @@
-name: Mirror and run GitLab CI
-
-on: [push]
-
+name: CI
+on:
+  push:
+    branches:
+      - '**'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Mirror + trigger CI
-        uses: SvanBoxel/gitlab-mirror-and-ci-action@master
+      - name: mirror-repository
+        uses: spyoungtech/mirror-action@v0.4.0
         with:
-          args: "https://gitlab.kozhindev.com/steroids/dev"
-        env:
-          GITLAB_HOSTNAME: "gitlab.kozhindev.com"
-          GITLAB_USERNAME: "github-action"
-          GITLAB_PASSWORD: ${{ secrets.GITLAB_ACCESS_TOKEN }}
-          GITLAB_PROJECT_ID: "16"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REMOTE: git@gitlab.kozhindev.com:steroids/dev.git
+          GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_KEY }}
+          GIT_SSH_PUBLIC_KEY: ${{ secrets.GIT_SSH_PUBLIC_KEY }}
+          GIT_SSH_NO_VERIFY_HOST: "true"
+          DEBUG: "true"

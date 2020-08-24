@@ -1,6 +1,6 @@
 {
-    "name": "boilerplate-yii2-k4nuj8",
-    "description": "Boilerplate Yii 2 k4nuj8",
+    "name": "steroids/dev",
+    "description": "Steroids dev",
     "type": "project",
     "minimum-stability": "dev",
     "prefer-stable": true,

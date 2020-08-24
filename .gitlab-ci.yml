@@ -4,7 +4,7 @@ stages:
 
 variables:
   DEV_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
-  STEROIDS_REPOS: ''
+  STEROIDS_REPOS: 'auth core file gii notifier react react-admin react-bootstrap react-native react-webpack'
   VENDOR_DIRS: 'steroids vendor node_modules'
   EXCLUDE_DIRS: '.cache-loader .expo .git .idea node_modules tests'
 
@@ -24,8 +24,8 @@ build:
       - public/*.*
       - public/frontend/*.*
   script:
+    - mkdir -p steroids
     - |
-      mkdir -p steroids
       for REPO in $STEROIDS_REPOS; do
         if [ -d steroids/$REPO ]; then
           git --git-dir=steroids/$REPO pull

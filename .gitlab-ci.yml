@@ -27,7 +27,9 @@ build:
     - |
       for REPO in $STEROIDS_REPOS; do
         if [ -d steroids/$REPO ]; then
-          cd $CI_PROJECT_DIR/$REPO && git pull
+          cd $CI_PROJECT_DIR/$REPO
+          echo "⏬ Git pull $CI_PROJECT_DIR/$REPO..."
+          git pull
         else
           git clone https://github.com/steroids/$REPO steroids/$REPO
         fi

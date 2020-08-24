@@ -21,6 +21,7 @@ class M200528092512User extends Migration
             'createTime' => $this->dateTime(),
             'updateTime' => $this->dateTime(),
         ]);
+        $this->createForeignKey('files', 'userId', 'users', 'id');
     }
 
     public function safeDown()

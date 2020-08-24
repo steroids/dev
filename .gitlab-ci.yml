@@ -3,9 +3,10 @@ stages:
   - deploy
 
 variables:
-  DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
-  VENDOR_DIRS: 'vendor node_modules'
-  EXCLUDE_DIRS: '.git .idea node_modules tests'
+  DEV_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  STEROIDS_REPOS: ''
+  VENDOR_DIRS: 'steroids vendor node_modules'
+  EXCLUDE_DIRS: '.cache-loader .expo .git .idea node_modules tests'
 
 before_script:
   - for DIR in $VENDOR_DIRS; do mkdir -p ../$DIR && rm -rf $DIR && mv ../$DIR .; done
@@ -21,8 +22,17 @@ build:
   artifacts:
     paths:
       - public/*.*
-      - public/assets/bundle-*
+      - public/frontend/*.*
   script:
+    - |
+      mkdir -p steroids
+      for REPO in $STEROIDS_REPOS; do
+        if [ -d steroids/$REPO ]; then
+          git --git-dir=steroids/$REPO pull
+        else
+          git clone https://github.com/steroids/$REPO steroids/$REPO
+        fi
+      done
     - composer --no-interaction --no-progress --prefer-dist install
     - yarn
     - node webpack production
@@ -36,4 +46,8 @@ deploy_dev:
   script:
     - ssh root@dev "mkdir -p $DEV_DEPLOY_DIR"
     - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude && rsync -rzak --exclude-from=../.rsync-exclude $CI_PROJECT_DIR/ root@dev:$DEV_DEPLOY_DIR
-    - ssh root@dev "cd $DEV_DEPLOY_DIR && ln -sf ../config/config.php && php yii migrate --interactive=0 && service php7.1-fpm restart"
+    - ssh root@dev "
+      cd $DEV_DEPLOY_DIR
+      && ln -sf ../config/config.php
+      && php yii migrate --interactive=0
+      && service php7.4-fpm restart"

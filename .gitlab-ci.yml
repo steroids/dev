@@ -18,7 +18,6 @@ build:
   stage: build
   only:
     - master
-    - prod
   artifacts:
     paths:
       - public/*.*
@@ -41,13 +40,11 @@ build:
 deploy_dev:
   stage: deploy
   only:
-    - dev
     - master
   script:
     - ssh root@dev "mkdir -p $DEV_DEPLOY_DIR"
     - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude && rsync -rzak --exclude-from=../.rsync-exclude $CI_PROJECT_DIR/ root@dev:$DEV_DEPLOY_DIR
-    - ssh root@dev "
-      cd $DEV_DEPLOY_DIR
+    - ssh root@dev "cd $DEV_DEPLOY_DIR
       && ln -sf ../config/config.php
       && php yii migrate --interactive=0
       && service php7.4-fpm restart"

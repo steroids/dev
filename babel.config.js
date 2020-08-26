@@ -1,8 +1,8 @@
 module.exports = function (api) {
     api.cache(false);
-    return {
-        // TODO Это сейчас применяется и к frontend приложению, хотя оно ему не нужно..
-        /*plugins: [
+    // TODO Это сейчас применяется и к frontend приложению, хотя оно ему не нужно..
+    /*return {
+        plugins: [
             ['module-resolver', {
                 'root': ['./mobile/src'],
                 'alias': {
@@ -11,9 +11,10 @@ module.exports = function (api) {
                     '@steroidsjs/native': __dirname + '/steroids/react-native',
                 },
             }],
+            ["@babel/plugin-proposal-decorators", { "legacy": true }]
         ],
         presets: [
             'babel-preset-expo',
-        ],*/
-    };
+        ],
+    }*/
 };

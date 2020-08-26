@@ -3,7 +3,7 @@ import {ScrollView, Text, View} from 'react-native';
 import {bem} from '@steroidsjs/core/hoc';
 import styles from './TimeFieldScreenStyles';
 import {IBemHocOutput} from "@steroidsjs/core/hoc/bem";
-import {TimeField} from "@steroidsjs/core/ui/form";
+import TimeField from "@steroidsjs/core/ui/form/TimeField";
 
 @bem('TimeFieldScreen', styles)
 export default class TimeFieldScreen extends React.Component<IBemHocOutput> {

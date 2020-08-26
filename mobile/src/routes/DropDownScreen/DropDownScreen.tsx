@@ -1,7 +1,7 @@
 import React from "react";
 import {ScrollView, Text, View} from 'react-native';
 import {bem} from '@steroidsjs/core/hoc';
-import {DropDownField} from "@steroidsjs/core/ui/form";
+import DropDownField from "@steroidsjs/core/ui/form/DropDownField";
 import styles from './DropDownScreenStyles';
 import {IBemHocOutput} from "@steroidsjs/core/hoc/bem";
 

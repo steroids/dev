@@ -1,9 +1,18 @@
-module.exports = {
-    resolver: {
-        extraNodeModules: {
-            'reducers': __dirname + '/mobile/src/reducers',
-            '@steroidsjs/core': __dirname + '/steroids/react',
-            '@steroidsjs/native': __dirname + '/steroids/react-native',
+const { getDefaultConfig } = require("metro-config");
+const extraNodeModules = require("./extraNodeModules");
+
+module.exports = (async () => {
+    const {
+        resolver: { sourceExts, assetExts }
+    } = await getDefaultConfig();
+    return {
+        transformer: {
+            babelTransformerPath: require.resolve("react-native-svg-transformer"),
+        },
+        resolver: {
+            assetExts: assetExts.filter(ext => ext !== "svg"),
+            sourceExts: [...sourceExts, "svg"],
+            extraNodeModules: extraNodeModules
         }
-    },
-};
+    };
+})();

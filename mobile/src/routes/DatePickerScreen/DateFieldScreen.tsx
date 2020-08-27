@@ -3,7 +3,7 @@ import {ScrollView, Text, View} from 'react-native';
 import {bem} from '@steroidsjs/core/hoc';
 import styles from './DateFieldScreenStyles';
 import {IBemHocOutput} from "@steroidsjs/core/hoc/bem";
-import {DateField} from "@steroidsjs/core/ui/form";
+import DateField from "@steroidsjs/core/ui/form/DateField";
 
 @bem('DateFieldScreen', styles)
 export default class DateFieldScreen extends React.Component<IBemHocOutput> {

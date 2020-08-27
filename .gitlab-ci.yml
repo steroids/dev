@@ -6,7 +6,7 @@ variables:
   DEV_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
   STEROIDS_REPOS: 'auth core file gii notifier react react-admin react-bootstrap react-native react-webpack'
   VENDOR_DIRS: 'steroids vendor node_modules'
-  EXCLUDE_DIRS: '.cache-loader .expo .git .idea node_modules tests'
+  EXCLUDE_DIRS: '.cache-loader .expo .git .idea node_modules tests steroids mobile'
 
 before_script:
   - for DIR in $VENDOR_DIRS; do mkdir -p ../$DIR && rm -rf $DIR && mv ../$DIR .; done

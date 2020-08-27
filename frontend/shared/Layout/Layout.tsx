@@ -5,7 +5,7 @@ import layout, {ILayoutHocOutput, STATUS_LOADING, STATUS_OK} from '@steroidsjs/c
 import {bem, components} from '@steroidsjs/core/hoc';
 import './Layout.scss';
 
-import * as logoUrl from 'static/logo-steroids.svg';
+import logo from 'static/logo-steroids.svg';
 import {IComponentsHocOutput} from '@steroidsjs/core/hoc/components';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 import Header from '@steroidsjs/core/ui/layout/Header';
@@ -31,7 +31,7 @@ export default class Layout extends React.PureComponent<IBemHocOutput & ICompone
                 <Header
                     logo={{
                         title: 'Steroids',
-                        logoUrl,
+                        icon: logo,
                     }}
                     nav={{
                         items: ROUTE_ROOT,

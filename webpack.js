@@ -20,7 +20,7 @@ require('./steroids/react-webpack')
             proxy: [
                 {
                     context: ['/api'],
-                    target: process.env.APP_BACKEND_URL || 'http://steroids.loc',
+                    target: process.env.APP_BACKEND_URL || 'https://steroids.kozhindedev.com',
                     changeOrigin: true,
                 },
             ],

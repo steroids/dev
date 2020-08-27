@@ -1,6 +1,6 @@
 @import 'style/variables';
 
-.ComponentsPage {
+.ReactPage {
   display: flex;
   flex-direction: row;
 
@@ -12,5 +12,8 @@
   &__content {
     flex-grow: 1;
     padding: 15px;
+  }
+
+  &__markdown {
   }
 }

@@ -22,7 +22,6 @@ build:
     paths:
       - public/*.*
       - public/frontend/*.*
-      - public/frontend/images/*.*
   script:
     - mkdir -p steroids
     - |

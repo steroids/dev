@@ -4,8 +4,6 @@ import {bem} from '@steroidsjs/core/hoc';
 import './IndexPage.scss';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 
-import appIllustrationImg from '../../resource/index-app-illustration.png';
-
 @bem('IndexPage')
 export default class IndexPage extends React.PureComponent<IBemHocOutput> {
 
@@ -21,7 +19,7 @@ export default class IndexPage extends React.PureComponent<IBemHocOutput> {
                     </div>
                     <div className={bem.element('image')}>
                         <img
-                            src={appIllustrationImg}
+                            src='/images/index-app-illustration.png'
                             alt={__(   'Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
                         />
                     </div>

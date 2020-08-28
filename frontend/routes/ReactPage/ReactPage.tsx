@@ -20,6 +20,29 @@ import * as autoDocs from '@steroidsjs/core/build/docs-autogen-result.json';
 import ApiTable from './views/ApiTable';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {IConnectHocOutput} from '@steroidsjs/core/hoc/connect';
+import MethodsTable from './views/MethodsTable';
+
+export interface IEntityInfoProperty {
+    name: string,
+    description: string,
+    required: boolean,
+    type: string,
+    example: string,
+    parameters?: IEntityInfoProperty[],
+}
+
+export interface IEntityInfo {
+    name: string,
+    moduleName: string,
+    title: string,
+    description: string,
+    tags: { [key: string]: string },
+    defaultProps?: object,
+    extends?: string[],
+    properties?: IEntityInfoProperty[],
+    methods?: IEntityInfoProperty[],
+}
+
 
 interface IReactPageProps extends IBemHocOutput, IConnectHocOutput {
     match: {
@@ -247,27 +270,9 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
         const docsKey = `./${this.props.match.params.path}.md`;
         let content = docsContext.keys().includes(docsKey) ? docsContext(docsKey).default : null;
 
-        if (content) {
-            content = marked(content, {
-                highlight: function (code, language) {
-                    if (!hljs.getLanguage(language)) {
-                        language = 'plaintext';
-                    }
-                    return hljs.highlight(language, code).value;
-                },
-                /*pedantic: false,
-                gfm: true,
-                breaks: false,
-                sanitize: false,
-                smartLists: true,
-                smartypants: false,
-                xhtml: false*/
-            });
-        }
-
         return (
             <div className={bem(bem.element('markdown'), 'markdown-body')}>
-                <div dangerouslySetInnerHTML={{__html: content}}/>
+                {this._renderMarkdown(content)}
             </div>
         );
     }
@@ -275,7 +280,7 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
     renderComponentCategory() {
         const bem = this.props.bem;
         const name = _upperFirst(this.props.match.params.path);
-        const classDocs = _get(autoDocs, ['components', `components/${name}Component`]);
+        const classDocs: IEntityInfo = _get(autoDocs, ['components', `components/${name}Component`]);
         if (!classDocs) {
             return null;
         }
@@ -285,14 +290,21 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
                 <div className={bem.element('description')}>
                     <h1>{classDocs.title || classDocs.name}</h1>
                     {classDocs.description && (
-                        <p className='w-75'>
-                            {classDocs.description}
-                        </p>
+                        <div className='w-75'>
+                            {this._renderMarkdown(classDocs.description)}
+                        </div>
                     )}
                 </div>
                 <div className={bem.element('api')}>
-                    <h2>Properties</h2>
-                    TODO...
+                    <h2>Configuration</h2>
+                    <ApiTable
+                        autoDocs={autoDocs}
+                        entityInfo={classDocs}
+                    />
+                    <h2>Methods</h2>
+                    <MethodsTable
+                        methods={classDocs.methods}
+                    />
                 </div>
             </>
         );
@@ -304,8 +316,8 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
         const inputName = `I${name}HocInput`;
         const outputName = `I${name}HocOutput`;
 
-        const inputDoc = this._resolveInterfaceDocs(inputName);
-        const outputDoc = this._resolveInterfaceDocs(outputName);
+        const inputDoc: IEntityInfo = _get(autoDocs, ['interfaces', inputName]);
+        const outputDoc: IEntityInfo = _get(autoDocs, ['interfaces', outputName]);
         const title = inputDoc.title || outputDoc.title;
         const description = inputDoc.description || outputDoc.description;
 
@@ -314,21 +326,21 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
                 <div className={bem.element('description')}>
                     <h1>{title}</h1>
                     {description && (
-                        <p className='w-75'>
-                            {description}
-                        </p>
+                        <div className='w-75'>
+                            {this._renderMarkdown(description)}
+                        </div>
                     )}
                 </div>
                 <div className={bem.element('api')}>
                     <h2>Input</h2>
                     <ApiTable
                         autoDocs={autoDocs}
-                        name={inputName}
+                        entityInfo={inputDoc}
                     />
                     <h2>Output</h2>
                     <ApiTable
                         autoDocs={autoDocs}
-                        name={outputName}
+                        entityInfo={outputDoc}
                     />
                 </div>
             </>
@@ -342,7 +354,7 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
         const name = _last(path);
 
         // Get title and description from auto generated docs
-        const {title, description} = this._resolveInterfaceDocs(`I${name}Props`);
+        const info = _get(autoDocs, ['interfaces', `I${name}Props`]);
 
         // Order demos by @order tag
         let demosKeys = Object.keys(demos || {});
@@ -351,11 +363,11 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
         return (
             <>
                 <div className={bem.element('description')}>
-                    <h1>{title}</h1>
-                    {description && (
-                        <p className='w-75'>
-                            {description}
-                        </p>
+                    <h1>{info.title}</h1>
+                    {info.description && (
+                        <div className='w-75'>
+                            {this._renderMarkdown(info.description)}
+                        </div>
                     )}
                 </div>
                 <div className={bem.element('demos')}>
@@ -368,7 +380,7 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
                     <h2>Api</h2>
                     <ApiTable
                         autoDocs={autoDocs}
-                        name={`I${name}Props`}
+                        entityInfo={autoDocs.interfaces[`I${name}Props`]}
                     />
                 </div>
             </>
@@ -398,25 +410,27 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
         );
     }
 
-    _resolveInterfaceDocs(name) {
-        const interfaceDocs = _get(autoDocs, ['interfaces', name]) || {};
-        if (!interfaceDocs) {
-            return {
-                title: '',
-                description: '',
-            };
-        }
-
-        const descriptionTags = {};
-        (interfaceDocs.descriptionTags || []).forEach(tag => {
-            descriptionTags[tag.tag] = tag.text;
-        });
-        const descriptionLines = (interfaceDocs.description || '').split('\n');
-
-        return {
-            title: descriptionLines.shift() || name,
-            description: descriptionTags['description'] || descriptionLines.join('\n'),
-        };
+    _renderMarkdown(content) {
+        return (
+            <div dangerouslySetInnerHTML={{
+                    __html: marked(content, {
+                        highlight: function (code, language) {
+                            if (!hljs.getLanguage(language)) {
+                                language = 'plaintext';
+                            }
+                            return hljs.highlight(language, code).value;
+                        },
+                        /*pedantic: false,
+                        gfm: true,
+                        breaks: false,
+                        sanitize: false,
+                        smartLists: true,
+                        smartypants: false,
+                        xhtml: false*/
+                    }),
+                }}
+            />
+        )
     }
 
 }

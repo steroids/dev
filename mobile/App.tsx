@@ -22,6 +22,8 @@ import style from './style';
             'form.DateFieldView': require('@steroidsjs/native/ui/form/DateField').default,
             'form.TimeFieldView': require('@steroidsjs/native/ui/form/TimeField').default,
             'form.DateTimeFieldView': require('@steroidsjs/native/ui/form/DateTimeField').default,
+            'layout.NotificationsView': require('@steroidsjs/native/ui/layout/Notification').default,
+            'layout.NotificationsItemView': require('@steroidsjs/native/ui/layout/Notification/NotificationItemView').default,
         });
         /*ui.addViews(require.context('@steroidsjs/bootstrap', true, /View.js$/));
         ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field.js$/));

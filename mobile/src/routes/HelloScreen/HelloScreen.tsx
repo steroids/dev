@@ -8,7 +8,7 @@ import {
     ROUTE_DROPDOWN,
     ROUTE_DATE,
     ROUTE_TIME,
-    ROUTE_DATETIME
+    ROUTE_DATETIME, ROUTE_NOTIFICATION
 } from '../routeNames';
 import {bem} from '@steroidsjs/core/hoc';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
@@ -68,6 +68,13 @@ export default class HelloScreen extends React.Component<IHelloScreenPrivateProp
                     style={bem('btn btn-indigo', bem.element('button'))}
                 >
                     DATETIME PICKER
+                </Button>
+                <Button
+                    mode="contained"
+                    onPress={() => this.props.navigation.navigate(ROUTE_NOTIFICATION)}
+                    style={bem('btn btn-indigo', bem.element('button'))}
+                >
+                    NOTIFICATION
                 </Button>
             </View>
         );

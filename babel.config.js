@@ -1,7 +1,7 @@
 module.exports = function (api) {
     api.cache(false);
     // TODO Это сейчас применяется и к frontend приложению, хотя оно ему не нужно..
-    /*return {
+    return {
         plugins: [
             ['module-resolver', {
                 'root': ['./mobile/src'],
@@ -16,5 +16,5 @@ module.exports = function (api) {
         presets: [
             'babel-preset-expo',
         ],
-    }*/
+    }
 };

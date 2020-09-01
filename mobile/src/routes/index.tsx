@@ -8,7 +8,8 @@ import {
     ROUTE_DROPDOWN,
     ROUTE_DATE,
     ROUTE_TIME, ROUTE_DATETIME,
-    ROUTE_NOTIFICATION
+    ROUTE_NOTIFICATION,
+    ROUTE_CHECKBOX
 } from "./routeNames";
 import ButtonScreen from "./ButtonScreen/ButtonScreen";
 import DropDownScreen from "./DropDownScreen/DropDownScreen";
@@ -16,6 +17,7 @@ import DateFieldScreen from "./DatePickerScreen/DateFieldScreen";
 import TimeFieldScreen from "./TimePickerScreen/TimeFieldScreen";
 import DateTimeFieldScreen from "./DateTimePickerScreen/DateTimeFieldScreen";
 import NotificationScreen from "./NotificationScreen/NotificationScreen";
+import CheckBoxScreen from "./CheckBoxScreen/CheckBoxScreen";
 
 export default {
     navigator: {
@@ -43,6 +45,9 @@ export default {
             },
             [ROUTE_NOTIFICATION]: {
                 component: NotificationScreen,
+            },
+            [ROUTE_CHECKBOX]: {
+                component: CheckBoxScreen,
             },
         },
     }

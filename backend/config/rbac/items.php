@@ -59,6 +59,7 @@ return [
             'm::steroids\\auth\\models\\AuthConfirm::expireTime',
             'm::steroids\\auth\\models\\AuthConfirm::value',
             'm::steroids\\auth\\models\\AuthConfirm::type',
+            'm::steroids\\auth\\models\\AuthConfirm::uid',
         ],
     ],
     'm::steroids\\auth\\models\\AuthConfirm::view' => [
@@ -1412,5 +1413,26 @@ return [
     'm::steroids\\billing\\models\\BillingOperation::createTime::view' => [
         'type' => 2,
         'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid' => [
+        'type' => 2,
+        'description' => 'uid',
+        'children' => [
+            'm::steroids\\auth\\models\\AuthConfirm::uid::view',
+            'm::steroids\\auth\\models\\AuthConfirm::uid::create',
+            'm::steroids\\auth\\models\\AuthConfirm::uid::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid::update' => [
+        'type' => 2,
+        'description' => 'update',
     ],
 ];

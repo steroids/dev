@@ -23,7 +23,7 @@ export default class CheckBoxScreen extends React.Component<any, any> {
                             {label: 'Америка'},
                             {label: 'Африка'},
                             {label: 'Европа'},
-                            {label: 'Карибское море'},
+                            {label: 'Австралия'},
                         ]}
                         multiple={true}
                     />

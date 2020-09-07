@@ -10,6 +10,7 @@ import {IComponentsHocOutput} from '@steroidsjs/core/hoc/components';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 import Header from '@steroidsjs/core/ui/layout/Header';
 import {ROUTE_ROOT} from '../../routes';
+import Portal from '@steroidsjs/core/ui/layout/Portal';
 
 @bem('Layout')
 @components('http')
@@ -40,6 +41,7 @@ export default class Layout extends React.PureComponent<IBemHocOutput & ICompone
                 <div className={bem.element('content')}>
                     <Notifications/>
                     {this.renderContent()}
+                    <Portal/>
                 </div>
             </div>
         );

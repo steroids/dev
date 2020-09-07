@@ -1,70 +1,53 @@
 import React from 'react';
 import Button from '@steroidsjs/core/ui/form/Button';
-import {mountInApp} from '../../../setupTests';
+import {mountInApp} from '../../../__mocks__/AppMock';
 
-
-// jest.useFakeTimers()
-
-describe('Button test', () => {
-
-    class ViewMock extends React.PureComponent {
-        render() {
-            return(
-                <div>ViewMock</div>
-            )
-        }
-    }
-
-    const onClick = jest.fn(() => new Promise(res => {
-        setTimeout(() => res(), 20000)
+describe('Button tests', () => {
+    const onAsyncClick = jest.fn(() => new Promise(res => {
+        setTimeout(() => res(), 3000)
     }));
 
     const flushPromises = () => new Promise(setImmediate);
 
-    // const onClick = jest.fn();
-
     const props = {
         color: 'primary',
-        label: 'Test',
-        onClick: onClick,
-        // view: ViewMock,
+        label: 'Button',
+        onClick: onAsyncClick,
     }
 
     let wrapper;
 
     beforeEach(() => {
         wrapper = mountInApp(<Button {...props} />)
-        // jest.useFakeTimers();
     });
 
     it('should render something', () => {
-        console.debug('html', wrapper.html());
-        console.debug('Button props', wrapper.find('Button').props());
         expect(wrapper.html()).not.toBe(null);
     })
 
     it('should exit props be correct', () => {
         expect(wrapper.find('ButtonView').prop('type')).toBe('button');
     })
-    //
-    // it('test', async () => {
-    //     jest.useFakeTimers();
-    //     wrapper.find('button').simulate('click');
-    //
-    //     expect(onClick).toBeCalled();
-    //     expect(onClick).toHaveBeenCalledTimes(1);
-    //     expect(wrapper.find('Button').state.isLoading).toBeFalsy();
-    //     // expect(wrapper.find('ViewMock').prop('isLoading')).toBeFalsy();
-    //
-    //     //resolve onClick promise
-    //     jest.runAllTimers();
-    //     //wait until pending promises are resolved
-    //     await flushPromises();
-    //     //skip setTimeout after .then
-    //     jest.runAllTimers();
-    //     expect(wrapper.find('Button').state.isLoading).toBeFalsy();
-    //     // wrapper.update();
-    //     // expect(wrapper.find('ViewMock').prop('isLoading')).toBeFalsy();
-    //
-    // })
+
+    it('should isLoading toggling when onClick return Promise', async () => {
+        jest.useFakeTimers();
+
+        expect(wrapper.find('Button').state().isLoading).toBeFalsy();
+        expect(wrapper.find('ButtonView').props().isLoading).toBeFalsy();
+
+        wrapper.find('button').simulate('click');
+
+        expect(onAsyncClick).toBeCalled();
+        expect(onAsyncClick).toHaveBeenCalledTimes(1);
+        expect(wrapper.find('Button').state().isLoading).toBeTruthy();
+        expect(wrapper.find('ButtonView').props().isLoading).toBeTruthy();
+
+        jest.runAllTimers(); //resolve onClick promise
+        await flushPromises(); //wait until pending promises are resolved
+        jest.runAllTimers(); //skip setTimeout after .then
+
+        expect(wrapper.find('Button').state().isLoading).toBeFalsy();
+        wrapper.update();
+        expect(wrapper.find('ButtonView').props().isLoading).toBeFalsy();
+    })
 })

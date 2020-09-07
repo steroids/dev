@@ -1,4 +1,5 @@
 import {application} from "@steroidsjs/core/hoc";
+import {mount} from 'enzyme';
 import views from "@steroidsjs/bootstrap";
 import fields from "@steroidsjs/core/ui/form";
 import formatters from "@steroidsjs/core/ui/format";
@@ -18,3 +19,9 @@ export default class AppMock extends React.PureComponent {
         return(this.props.children);
     }
 }
+
+export const mountInApp = (Component) => mount(
+    <AppMock>
+        {Component}
+    </AppMock>
+)

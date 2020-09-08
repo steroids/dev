@@ -15,6 +15,12 @@
       "@steroidsjs/core/*": [
         "steroids/react/*"
       ],
+      "@steroidsjs/bootstrap": [
+        "steroids/react-bootstrap"
+      ],
+      "@steroidsjs/bootstrap/*": [
+        "steroids/react-bootstrap/*"
+      ],
       "@steroidsjs/native/*": [
         "steroids/react-native/*"
       ]

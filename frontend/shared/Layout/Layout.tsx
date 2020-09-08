@@ -18,7 +18,7 @@ import Portal from '@steroidsjs/core/ui/layout/Portal';
     /*props => props.http.post('/api/v1/init', {
         timestamp: Date.now(),
     }),*/
-    () => Promise.resolve({})
+    () => new Promise(resolve => setTimeout(() => resolve({}), 100))
 )
 export default class Layout extends React.PureComponent<IBemHocOutput & IComponentsHocOutput & ILayoutHocOutput> {
 

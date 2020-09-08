@@ -28,13 +28,6 @@ import style from './style';
             'layout.NotificationsView': require('@steroidsjs/native/ui/layout/Notification').default,
             'layout.NotificationsItemView': require('@steroidsjs/native/ui/layout/Notification/NotificationItemView').default,
         });
-        /*ui.addViews(require.context('@steroidsjs/bootstrap', true, /View.js$/));
-        ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field.js$/));
-        ui.addFormatters(require.context('@steroidsjs/bootstrap', true, /Formatter.js$/));
-
-        // Automatically import all fields and formatters from steroids
-        ui.addFields(require.context('@steroidsjs/core/ui', true, /Field.js$/));
-        ui.addFormatters(require.context('@steroidsjs/core/ui', true, /Formatter.js$/));*/
     },
 })
 export default class App extends React.PureComponent {

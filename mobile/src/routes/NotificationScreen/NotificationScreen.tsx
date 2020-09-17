@@ -9,7 +9,7 @@ import {Notifications} from "@steroidsjs/core/ui/layout";
 @connect()
 export default class NotificationScreen extends React.Component<any, any> {
     render() {
-        const notificationLevels = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
+        const notificationLevels = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
         return (
             <View style={{
                 height: '100%',
@@ -22,7 +22,7 @@ export default class NotificationScreen extends React.Component<any, any> {
                         size='lg'
                         color={level}
                         label={__(`Notification ${level}`)}
-                        onClick={() => this.props.dispatch(showNotification(`${level} notification`, {level}))}
+                        onClick={() => this.props.dispatch(showNotification(`${level} notification`, level))}
                     />))}
                 <Notifications/>
             </View>

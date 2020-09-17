@@ -10,6 +10,14 @@ class User extends UserMeta implements UserInterface
 {
     use UserTrait;
 
+    public function fields()
+    {
+        return [
+            'id',
+            'name',
+        ];
+    }
+
     /**
      * @param string $templateName
      * @param array $params
@@ -32,5 +40,6 @@ class User extends UserMeta implements UserInterface
     public function getName()
     {
         // TODO: Implement getName() method.
+        return $this->email;
     }
 }

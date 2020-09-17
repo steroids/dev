@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 5388,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPid": 61375,
+  "expoServerNgrokUrl": "https://qi-8xj.anonymous.steroids-dev.exp.direct",
+  "packagerNgrokUrl": "https://packager.qi-8xj.anonymous.steroids-dev.exp.direct",
+  "ngrokPid": 61389,
   "webpackServerPort": null
 }

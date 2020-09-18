@@ -11,21 +11,24 @@ export default class NotificationScreen extends React.Component<any, any> {
     render() {
         const notification = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
         return (
-            <View style={{
-                height: '100%',
-                paddingHorizontal: 10,
-                justifyContent: "space-around",
-            }}>
-                {notification.map(level => (
-                    <Button
-                        key={level}
-                        size='lg'
-                        color={level}
-                        label={__(`Notification ${level}`)}
-                        onClick={() => this.props.dispatch(showNotification(`${level} notification`, {level}))}
-                    />))}
+            <>
+                <View style={{
+                    height: '100%',
+                    paddingHorizontal: 10,
+                    justifyContent: "space-around",
+                }}>
+                    {notification.map(level => (
+                        <Button
+                            key={level}
+                            size='lg'
+                            color={level}
+                            label={__(`Notification ${level}`)}
+                            onClick={() => this.props.dispatch(showNotification(`${level} notification`, level))}
+                        />))}
+
+                </View>
                 <Notifications/>
-            </View>
+            </>
         )
     }
 }

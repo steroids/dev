@@ -5,6 +5,9 @@ import HtmlComponent from '@steroidsjs/native/components/HtmlComponent';
 
 import style from './style';
 
+process.env.PLATFORM = 'mobile';
+
+
 @application({
     components: {
         html: {
@@ -27,7 +30,11 @@ import style from './style';
             'form.RadioListFieldView': require('@steroidsjs/native/ui/form/RadioListField').default,
             'layout.NotificationsView': require('@steroidsjs/native/ui/layout/Notification').default,
             'layout.NotificationsItemView': require('@steroidsjs/native/ui/layout/Notification/NotificationItemView').default,
+            'icon.IconView': require('@steroidsjs/native/ui/icon/IconView').default,
         });
+        ui.addIcons({
+            ...require('../steroids/react-native/assets/icons').default,
+        })
         /*ui.addViews(require.context('@steroidsjs/bootstrap', true, /View.js$/));
         ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field.js$/));
         ui.addFormatters(require.context('@steroidsjs/bootstrap', true, /Formatter.js$/));

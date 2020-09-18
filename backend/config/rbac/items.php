@@ -18,6 +18,8 @@ return [
         'children' => [
             'a::api::self',
             'a::api::gii',
+            'a::api::admin',
+            'a::api::billing',
         ],
     ],
     'a::api::self' => [
@@ -28,18 +30,24 @@ return [
         'type' => 1,
         'children' => [
             'a::file',
+            'a::api::admin::self',
+            'a::api::admin::billing',
+            'a::api::billing::currencies',
         ],
     ],
     'user' => [
         'type' => 1,
         'children' => [
             'a::file',
+            'a::api::billing',
         ],
     ],
     'admin' => [
         'type' => 1,
         'children' => [
             'a::file',
+            'a::api::admin',
+            'a::api::billing',
         ],
     ],
     'm::steroids\\auth\\models\\AuthConfirm' => [
@@ -59,6 +67,7 @@ return [
             'm::steroids\\auth\\models\\AuthConfirm::expireTime',
             'm::steroids\\auth\\models\\AuthConfirm::value',
             'm::steroids\\auth\\models\\AuthConfirm::type',
+            'm::steroids\\auth\\models\\AuthConfirm::uid',
         ],
     ],
     'm::steroids\\auth\\models\\AuthConfirm::view' => [
@@ -1263,11 +1272,12 @@ return [
             'm::steroids\\billing\\models\\BillingOperation::delete',
             'm::steroids\\billing\\models\\BillingOperation::id',
             'm::steroids\\billing\\models\\BillingOperation::name',
-            'm::steroids\\billing\\models\\BillingOperation::accountId',
-            'm::steroids\\billing\\models\\BillingOperation::refId',
             'm::steroids\\billing\\models\\BillingOperation::delta',
-            'm::steroids\\billing\\models\\BillingOperation::paramsJson',
             'm::steroids\\billing\\models\\BillingOperation::createTime',
+            'm::steroids\\billing\\models\\BillingOperation::currencyId',
+            'm::steroids\\billing\\models\\BillingOperation::fromAccountId',
+            'm::steroids\\billing\\models\\BillingOperation::toAccountId',
+            'm::steroids\\billing\\models\\BillingOperation::documentId',
         ],
     ],
     'm::steroids\\billing\\models\\BillingOperation::view' => [
@@ -1318,48 +1328,6 @@ return [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\billing\\models\\BillingOperation::accountId' => [
-        'type' => 2,
-        'description' => 'accountId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::accountId::view',
-            'm::steroids\\billing\\models\\BillingOperation::accountId::create',
-            'm::steroids\\billing\\models\\BillingOperation::accountId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::accountId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::accountId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::accountId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::refId' => [
-        'type' => 2,
-        'description' => 'refId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::refId::view',
-            'm::steroids\\billing\\models\\BillingOperation::refId::create',
-            'm::steroids\\billing\\models\\BillingOperation::refId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::refId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::refId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::refId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::steroids\\billing\\models\\BillingOperation::delta' => [
         'type' => 2,
         'description' => 'delta',
@@ -1381,27 +1349,6 @@ return [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\billing\\models\\BillingOperation::paramsJson' => [
-        'type' => 2,
-        'description' => 'paramsJson',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::paramsJson::view',
-            'm::steroids\\billing\\models\\BillingOperation::paramsJson::create',
-            'm::steroids\\billing\\models\\BillingOperation::paramsJson::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::paramsJson::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::paramsJson::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::paramsJson::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::steroids\\billing\\models\\BillingOperation::createTime' => [
         'type' => 2,
         'description' => 'createTime',
@@ -1412,5 +1359,268 @@ return [
     'm::steroids\\billing\\models\\BillingOperation::createTime::view' => [
         'type' => 2,
         'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid' => [
+        'type' => 2,
+        'description' => 'uid',
+        'children' => [
+            'm::steroids\\auth\\models\\AuthConfirm::uid::view',
+            'm::steroids\\auth\\models\\AuthConfirm::uid::create',
+            'm::steroids\\auth\\models\\AuthConfirm::uid::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::uid::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::currencyId' => [
+        'type' => 2,
+        'description' => 'currencyId',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingOperation::currencyId::view',
+            'm::steroids\\billing\\models\\BillingOperation::currencyId::create',
+            'm::steroids\\billing\\models\\BillingOperation::currencyId::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::currencyId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::currencyId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::currencyId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::fromAccountId' => [
+        'type' => 2,
+        'description' => 'fromAccountId',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingOperation::fromAccountId::view',
+            'm::steroids\\billing\\models\\BillingOperation::fromAccountId::create',
+            'm::steroids\\billing\\models\\BillingOperation::fromAccountId::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::fromAccountId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::fromAccountId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::fromAccountId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::toAccountId' => [
+        'type' => 2,
+        'description' => 'toAccountId',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingOperation::toAccountId::view',
+            'm::steroids\\billing\\models\\BillingOperation::toAccountId::create',
+            'm::steroids\\billing\\models\\BillingOperation::toAccountId::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::toAccountId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::toAccountId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::toAccountId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::documentId' => [
+        'type' => 2,
+        'description' => 'documentId',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingOperation::documentId::view',
+            'm::steroids\\billing\\models\\BillingOperation::documentId::create',
+            'm::steroids\\billing\\models\\BillingOperation::documentId::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::documentId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::documentId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingOperation::documentId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument' => [
+        'type' => 2,
+        'description' => 'steroids\\billing\\models\\BillingManualDocument',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingManualDocument::view',
+            'm::steroids\\billing\\models\\BillingManualDocument::create',
+            'm::steroids\\billing\\models\\BillingManualDocument::update',
+            'm::steroids\\billing\\models\\BillingManualDocument::delete',
+            'm::steroids\\billing\\models\\BillingManualDocument::id',
+            'm::steroids\\billing\\models\\BillingManualDocument::userId',
+            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress',
+            'm::steroids\\billing\\models\\BillingManualDocument::comment',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::id' => [
+        'type' => 2,
+        'description' => 'id',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingManualDocument::id::view',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::id::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::userId' => [
+        'type' => 2,
+        'description' => 'userId',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingManualDocument::userId::view',
+            'm::steroids\\billing\\models\\BillingManualDocument::userId::create',
+            'm::steroids\\billing\\models\\BillingManualDocument::userId::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::userId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::userId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::userId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress' => [
+        'type' => 2,
+        'description' => 'ipAddress',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::view',
+            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::create',
+            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::comment' => [
+        'type' => 2,
+        'description' => 'comment',
+        'children' => [
+            'm::steroids\\billing\\models\\BillingManualDocument::comment::view',
+            'm::steroids\\billing\\models\\BillingManualDocument::comment::create',
+            'm::steroids\\billing\\models\\BillingManualDocument::comment::update',
+        ],
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::comment::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::comment::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\billing\\models\\BillingManualDocument::comment::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'a::api::admin' => [
+        'type' => 2,
+        'description' => 'admin',
+        'children' => [
+            'a::api::admin::self',
+            'a::api::admin::billing',
+        ],
+    ],
+    'a::api::admin::self' => [
+        'type' => 2,
+        'description' => 'self',
+    ],
+    'a::api::admin::billing' => [
+        'type' => 2,
+        'description' => 'billing',
+        'children' => [
+            'a::api::admin::billing::self',
+            'a::api::admin::billing::get-operations',
+            'a::api::admin::billing::create-manual',
+        ],
+    ],
+    'a::api::admin::billing::self' => [
+        'type' => 2,
+        'description' => 'self',
+    ],
+    'a::api::admin::billing::get-operations' => [
+        'type' => 2,
+        'description' => 'get-operations',
+    ],
+    'a::api::admin::billing::create-manual' => [
+        'type' => 2,
+        'description' => 'create-manual',
+    ],
+    'a::api::billing' => [
+        'type' => 2,
+        'description' => 'billing',
+        'children' => [
+            'a::api::billing::self',
+            'a::api::billing::user-operations',
+            'a::api::billing::currencies',
+        ],
+    ],
+    'a::api::billing::self' => [
+        'type' => 2,
+        'description' => 'self',
+    ],
+    'a::api::billing::user-operations' => [
+        'type' => 2,
+        'description' => 'user-operations',
+    ],
+    'a::api::billing::currencies' => [
+        'type' => 2,
+        'description' => 'currencies',
     ],
 ];

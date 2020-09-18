@@ -1,3 +1,5 @@
+process.env.APP_BACKEND_URL = process.env.APP_BACKEND_URL || 'https://steroids.kozhindedev.com';
+
 require('./steroids/react-webpack')
     .config({
         port: 9991,
@@ -12,18 +14,6 @@ require('./steroids/react-webpack')
                     '@steroidsjs/bootstrap': __dirname + '/steroids/react-bootstrap',
                 },
             },
-        },
-        devServer: {
-            historyApiFallback: {
-                index: '/frontend/index.html',
-            },
-            proxy: [
-                {
-                    context: ['/api'],
-                    target: process.env.APP_BACKEND_URL || 'http://steroids.loc',
-                    changeOrigin: true,
-                },
-            ],
         },
     })
     .base(__dirname + '/frontend/index.tsx');

@@ -7,6 +7,11 @@ import 'style/index.scss';
 
 @hot(module)
 @application({
+    components: {
+        store: {
+            reducers: require('@steroidsjs/core/reducers').default,
+        }
+    },
     onInit: ({ui}) => {
         ui.addViews(require('@steroidsjs/bootstrap').default);
         ui.addFields(require('@steroidsjs/core/ui/form').default);

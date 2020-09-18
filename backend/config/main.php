@@ -18,6 +18,11 @@ return Boot::getMainConfig([
         'auth' => [
             'userClass' => '\app\user\models\User',
         ],
+        'billing' => [
+            'rates' => [
+                '\steroids\billing\rates\EuropeanCentralBankRate',
+            ],
+        ],
     ],
     'params' => [
         'adminEmail' => '',

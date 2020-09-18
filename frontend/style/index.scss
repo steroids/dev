@@ -1,5 +1,7 @@
 @import './bootstrap/bootstrap';
 @import './fonts';
 @import './variables';
-@import '@steroidsjs/bootstrap/index.scss';
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import '~@steroidsjs/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~highlight.js/scss/github';
+@import '~github-markdown-css/github-markdown.css';

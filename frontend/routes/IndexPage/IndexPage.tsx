@@ -13,7 +13,17 @@ export default class IndexPage extends React.PureComponent<IBemHocOutput> {
         const bem = this.props.bem;
         return (
             <div className={bem.block()}>
-                Hello ;)
+                <div className={bem.element('centered')}>
+                    <div className={bem.element('title')}>
+                        {__(   'Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
+                    </div>
+                    <div className={bem.element('image')}>
+                        <img
+                            src='/images/index-app-illustration.png'
+                            alt={__(   'Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
+                        />
+                    </div>
+                </div>
             </div>
         );
     }

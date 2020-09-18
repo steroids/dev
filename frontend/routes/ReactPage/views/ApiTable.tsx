@@ -2,44 +2,26 @@ import * as React from 'react';
 import _get from 'lodash-es/get';
 import _isObject from 'lodash-es/isObject';
 import _isEmpty from 'lodash-es/isEmpty';
+import marked from 'marked';
 import {bem} from '@steroidsjs/core/hoc';
 
 import './ApiTable.scss';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 import Link from '@steroidsjs/core/ui/nav/Link';
+import {IEntityInfo, IEntityInfoProperty} from '../ReactPage';
 
-
-interface IInterfacePropertyDoc {
-    name: string,
-    description: string,
-    required: boolean,
-    type: string,
-    example: string,
-}
-
-interface IInterfaceDoc {
-    name: string,
-    moduleName: string,
-    description: string,
-    descriptionTags?: {
-        tag: string,
-        text: string,
-    }[],
-    extends: string[],
-    items: IInterfacePropertyDoc[]
-}
 
 interface IApiTableProps extends IBemHocOutput {
     autoDocs: any | {
         interfaces: {
-            [key: string]: IInterfaceDoc
+            [key: string]: IEntityInfo,
         },
         declarations: {
-            [key: string]: IInterfacePropertyDoc
+            [key: string]: IEntityInfoProperty,
         },
         components: any,
     },
-    name: string,
+    entityInfo: IEntityInfo,
 }
 
 interface IApiTableState {
@@ -80,21 +62,21 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
                     </tr>
                 </thead>
                 <tbody>
-                    {this.renderRows(this.props.name, this.props.autoDocs.interfaces[this.props.name])}
+                    {this.renderRows(this.props.entityInfo.name, this.props.entityInfo)}
                 </tbody>
             </table>
         );
     }
 
-    renderRows(id: string, interfaceDoc: IInterfaceDoc, level = 0) {
-        if (!interfaceDoc) {
+    renderRows(id: string, entityInfo: IEntityInfo, level = 0) {
+        if (!entityInfo) {
             return null;
         }
 
         const bem = this.props.bem;
         let result = [
             <tr
-                key={id}
+                key={entityInfo.name}
                 className={bem.element('row', {
                     sub: level > 1,
                 })}
@@ -106,7 +88,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
                     <div style={{paddingLeft: 30 * level}}>
                         {level > 0 && (
                             <Link
-                                label={interfaceDoc.name + ' ' + (this.state.opened[id] ? '-' : '+')}
+                                label={entityInfo.name + ' ' + (this.state.opened[id] ? '-' : '+')}
                                 onClick={e => {
                                     e.preventDefault();
 
@@ -119,7 +101,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
                                 }}
                             />
                         ) || (
-                            interfaceDoc.name
+                            entityInfo.name
                         )}
                     </div>
                 </td>
@@ -128,12 +110,12 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
         if (level === 0 || this.state.opened[id]) {
             result = result
                 .concat(
-                    interfaceDoc.items.map(item => (
-                        this.renderRow('interface', interfaceDoc.moduleName, id + '-' + item.name, item, level)
+                    entityInfo.properties.map(item => (
+                        this.renderRow('interface', entityInfo.moduleName, id + '-' + item.name, item, level)
                     )) as Array<any>
                 )
                 .concat(
-                    (interfaceDoc.extends || []).map(extendName => (
+                    (entityInfo.extends || []).map(extendName => (
                         this.renderRows(id + '-' + extendName, this.props.autoDocs.interfaces[extendName], level)
                     )) as Array<any>
                 );
@@ -144,7 +126,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
     _getInterfaceKeys(interfaceDoc) {
         let keys = [];
         if (interfaceDoc) {
-            keys = interfaceDoc.items.map(item => item.name);
+            keys = interfaceDoc.properties.map(item => item.name);
             (interfaceDoc.extends || []).forEach(extendName => {
                 keys = keys.concat(this._getInterfaceKeys(this.props.autoDocs.interfaces[extendName]));
             });
@@ -156,7 +138,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
         const subInterfaces = item.type.split('|')
             .map(type => type.trim())
             .filter(type => !!this.props.autoDocs.interfaces[type]);
-        const subDeclarations = item.type.split('|')
+        let subDeclarations = item.type.split('|')
             .map(type => type.trim())
             .filter(type => !!this.props.autoDocs.declarations[type]);
 
@@ -179,21 +161,15 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
         }
 
         // if interface has 1 declaration we print his declaration instead interface
-        if (subDeclarations.length == 1) {
-            const firstSubDeclareType = subDeclarations[0];
-            const subType = this.props.autoDocs.declarations[firstSubDeclareType]
-            const existNextSubDeclarations = subType.type.split('|')
-                .map(type => type.trim())
-                .filter(type => !!this.props.autoDocs.declarations[type]);
-            if (!_isEmpty(subDeclarations) && _isEmpty(existNextSubDeclarations) && level === 0) {
-                let subTypeClone = {
-                    type: null,
-                };
-                //clone object
-                Object.assign(subTypeClone, subType);
-                subTypeClone.type = `${firstSubDeclareType}(${subType.type})`;
-                return this.renderRow(category, moduleName, id + '-' + firstSubDeclareType, subTypeClone, 0);
+        if (subDeclarations.length === 1) {
+            const subType: IEntityInfoProperty = this.props.autoDocs.declarations[subDeclarations[0]];
+            item = {
+                ...item,
+                description: item.description || subType.description,
+                example: item.example || subType.example,
+                type: subType.type,
             }
+            subDeclarations = [];
         }
 
         const bem = this.props.bem;
@@ -217,7 +193,7 @@ export default class ApiTable extends React.PureComponent<IApiTableProps, IApiTa
                     )}
                 </td>
                 <td>
-                    {item.description}
+                    <div dangerouslySetInnerHTML={{__html: marked(item.description)}}/>
                 </td>
                 <td>
                     <code>

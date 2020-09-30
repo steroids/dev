@@ -1623,4 +1623,86 @@ return [
         'type' => 2,
         'description' => 'currencies',
     ],
+    'm::app\\auth\\models\\Auth2FAValidation' => [
+        'type' => 2,
+        'description' => 'app\\auth\\models\\Auth2FaValidation',
+        'children' => [
+            'm::app\\auth\\models\\Auth2FAValidation::view',
+            'm::app\\auth\\models\\Auth2FAValidation::create',
+            'm::app\\auth\\models\\Auth2FAValidation::update',
+            'm::app\\auth\\models\\Auth2FAValidation::delete',
+            'm::app\\auth\\models\\Auth2FAValidation::id',
+            'm::app\\auth\\models\\Auth2FAValidation::createTime',
+            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType',
+        ],
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::id' => [
+        'type' => 2,
+        'description' => 'id',
+        'children' => [
+            'm::app\\auth\\models\\Auth2FAValidation::id::view',
+        ],
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::id::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::createTime' => [
+        'type' => 2,
+        'description' => 'createTime',
+        'children' => [
+            'm::app\\auth\\models\\Auth2FAValidation::createTime::view',
+            'm::app\\auth\\models\\Auth2FAValidation::createTime::create',
+            'm::app\\auth\\models\\Auth2FAValidation::createTime::update',
+        ],
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::createTime::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::createTime::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::createTime::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType' => [
+        'type' => 2,
+        'description' => 'authentificatorType',
+        'children' => [
+            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::view',
+            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::create',
+            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::update',
+        ],
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
 ];

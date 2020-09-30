@@ -17,6 +17,10 @@ return Boot::getMainConfig([
     'modules' => [
         'auth' => [
             'userClass' => '\app\user\models\User',
+            'captcha' => [
+                'class' => '\steroids\auth\components\captcha\ReCaptchaV3',
+                'secretKey' => 'google secret key'
+            ]
         ],
         'billing' => [
             'rates' => [

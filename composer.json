@@ -18,7 +18,8 @@
         "yiisoft/yii2-gii": "^2.0",
         "phpunit/phpunit": "9.1.5",
         "doctrine/annotations": "^1.6",
-        "mtdowling/cron-expression": "1.2.3"
+        "mtdowling/cron-expression": "1.2.3",
+        "pragmarx/google2fa": "^8.0"
     },
     "config": {
         "process-timeout": 1800

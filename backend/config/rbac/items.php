@@ -68,6 +68,7 @@ return [
             'm::steroids\\auth\\models\\AuthConfirm::value',
             'm::steroids\\auth\\models\\AuthConfirm::type',
             'm::steroids\\auth\\models\\AuthConfirm::uid',
+            'm::steroids\\auth\\models\\AuthConfirm::is2Fa',
         ],
     ],
     'm::steroids\\auth\\models\\AuthConfirm::view' => [
@@ -1623,85 +1624,232 @@ return [
         'type' => 2,
         'description' => 'currencies',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation' => [
         'type' => 2,
-        'description' => 'app\\auth\\models\\Auth2FaValidation',
+        'description' => 'steroids\\auth\\models\\Auth2FaValidation',
         'children' => [
-            'm::app\\auth\\models\\Auth2FAValidation::view',
-            'm::app\\auth\\models\\Auth2FAValidation::create',
-            'm::app\\auth\\models\\Auth2FAValidation::update',
-            'm::app\\auth\\models\\Auth2FAValidation::delete',
-            'm::app\\auth\\models\\Auth2FAValidation::id',
-            'm::app\\auth\\models\\Auth2FAValidation::createTime',
-            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType',
+            'm::steroids\\auth\\models\\Auth2FaValidation::view',
+            'm::steroids\\auth\\models\\Auth2FaValidation::create',
+            'm::steroids\\auth\\models\\Auth2FaValidation::update',
+            'm::steroids\\auth\\models\\Auth2FaValidation::delete',
+            'm::steroids\\auth\\models\\Auth2FaValidation::id',
+            'm::steroids\\auth\\models\\Auth2FaValidation::createTime',
+            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType',
+            'm::steroids\\auth\\models\\Auth2FaValidation::userId',
         ],
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::view' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::create' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::update' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::delete' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::delete' => [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::id' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::id' => [
         'type' => 2,
         'description' => 'id',
         'children' => [
-            'm::app\\auth\\models\\Auth2FAValidation::id::view',
+            'm::steroids\\auth\\models\\Auth2FaValidation::id::view',
         ],
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::id::view' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::id::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::createTime' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::createTime' => [
         'type' => 2,
         'description' => 'createTime',
         'children' => [
-            'm::app\\auth\\models\\Auth2FAValidation::createTime::view',
-            'm::app\\auth\\models\\Auth2FAValidation::createTime::create',
-            'm::app\\auth\\models\\Auth2FAValidation::createTime::update',
+            'm::steroids\\auth\\models\\Auth2FaValidation::createTime::view',
+            'm::steroids\\auth\\models\\Auth2FaValidation::createTime::create',
+            'm::steroids\\auth\\models\\Auth2FaValidation::createTime::update',
         ],
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::createTime::view' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::createTime::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::createTime::create' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::createTime::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::createTime::update' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::createTime::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType' => [
         'type' => 2,
         'description' => 'authentificatorType',
         'children' => [
-            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::view',
-            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::create',
-            'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::update',
+            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::view',
+            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::create',
+            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::update',
         ],
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::view' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::create' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::app\\auth\\models\\Auth2FAValidation::authentificatorType::update' => [
+    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\Auth2FaValidation::userId' => [
+        'type' => 2,
+        'description' => 'userId',
+        'children' => [
+            'm::steroids\\auth\\models\\Auth2FaValidation::userId::view',
+            'm::steroids\\auth\\models\\Auth2FaValidation::userId::create',
+            'm::steroids\\auth\\models\\Auth2FaValidation::userId::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\Auth2FaValidation::userId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\Auth2FaValidation::userId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\Auth2FaValidation::userId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys' => [
+        'type' => 2,
+        'description' => 'steroids\\auth\\models\\UserAuthentificatorKeys',
+        'children' => [
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::view',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::create',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::update',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::delete',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::id',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType',
+        ],
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::id' => [
+        'type' => 2,
+        'description' => 'id',
+        'children' => [
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::id::view',
+        ],
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::id::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId' => [
+        'type' => 2,
+        'description' => 'userId',
+        'children' => [
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::view',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::create',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey' => [
+        'type' => 2,
+        'description' => 'secretKey',
+        'children' => [
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::view',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::create',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType' => [
+        'type' => 2,
+        'description' => 'authentificatorType',
+        'children' => [
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::view',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::create',
+            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::is2Fa' => [
+        'type' => 2,
+        'description' => 'is2Fa',
+        'children' => [
+            'm::steroids\\auth\\models\\AuthConfirm::is2Fa::view',
+            'm::steroids\\auth\\models\\AuthConfirm::is2Fa::create',
+            'm::steroids\\auth\\models\\AuthConfirm::is2Fa::update',
+        ],
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::is2Fa::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::is2Fa::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\auth\\models\\AuthConfirm::is2Fa::update' => [
         'type' => 2,
         'description' => 'update',
     ],

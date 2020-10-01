@@ -19,7 +19,8 @@
         "phpunit/phpunit": "9.1.5",
         "doctrine/annotations": "^1.6",
         "mtdowling/cron-expression": "1.2.3",
-        "pragmarx/google2fa": "^8.0"
+        "pragmarx/google2fa": "^8.0",
+        "bacon/bacon-qr-code": "^2.0"
     },
     "config": {
         "process-timeout": 1800

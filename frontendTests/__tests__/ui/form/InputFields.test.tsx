@@ -31,7 +31,7 @@ describe('InputField tests', () => {
             expect(wrapper.find('input')).toHaveProp('placeholder', props.placeholder);
         });
         it('should have right external style', () => {
-            expect(wrapper.find('input')).toHaveProp('style', props.style);
+            expect(wrapper.find('InputFieldView')).toHaveProp('style', props.style);
         });
         it('should have right external className', () => {
             expect(wrapper.find('InputFieldView')).toHaveClassName(props.className);

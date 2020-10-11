@@ -12,7 +12,7 @@ import style from './style';
             ...style,
         },
     },
-    onInit: ({html, ui}) => {
+    onInit: ({ui}) => {
         // Automatically import all views
         ui.addViews({
             'form.InputFieldView': require('@steroidsjs/native/ui/form/InputField').default,
@@ -22,20 +22,21 @@ import style from './style';
             'form.DateFieldView': require('@steroidsjs/native/ui/form/DateField').default,
             'form.TimeFieldView': require('@steroidsjs/native/ui/form/TimeField').default,
             'form.DateTimeFieldView': require('@steroidsjs/native/ui/form/DateTimeField').default,
+            'form.CheckboxFieldView': require('@steroidsjs/native/ui/form/CheckboxField').default,
+            'form.CheckboxListFieldView': require('@steroidsjs/native/ui/form/CheckboxListField').default,
+            'form.RadioListFieldView': require('@steroidsjs/native/ui/form/RadioListField').default,
+            'layout.NotificationsView': require('@steroidsjs/native/ui/layout/Notifications').default,
+            'layout.NotificationsItemView': require('@steroidsjs/native/ui/layout/Notifications/NotificationItemView').default,
+            'icon.IconView': require('@steroidsjs/native/ui/icon/IconView').default,
         });
-        /*ui.addViews(require.context('@steroidsjs/bootstrap', true, /View.js$/));
-        ui.addFields(require.context('@steroidsjs/bootstrap', true, /Field.js$/));
-        ui.addFormatters(require.context('@steroidsjs/bootstrap', true, /Formatter.js$/));
 
-        // Automatically import all fields and formatters from steroids
-        ui.addFields(require.context('@steroidsjs/core/ui', true, /Field.js$/));
-        ui.addFormatters(require.context('@steroidsjs/core/ui', true, /Formatter.js$/));*/
+        ui.addIcons(require('@steroidsjs/native/assets/icons').default);
     },
 })
 export default class App extends React.PureComponent {
     render() {
         return (
-            <NativeRouter routes={require('./src/routes').default}/>
+            <NativeRouter auth={null} routes={require('./src/routes').default}/>
         );
     }
 }

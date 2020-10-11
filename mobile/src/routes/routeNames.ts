@@ -6,3 +6,5 @@ export const ROUTE_DROPDOWN = 'dropdown';
 export const ROUTE_DATE = 'date';
 export const ROUTE_TIME = 'time';
 export const ROUTE_DATETIME = 'datetime';
+export const ROUTE_NOTIFICATION = 'notification';
+export const ROUTE_CHECKBOX = 'checkbox'

@@ -34,7 +34,7 @@ composer.phar
 /config.js
 
 public/assets/*
-public/index-lang.js
+public/index-lang.json
 /node_modules
 /mobile/node_modules
 /vendor

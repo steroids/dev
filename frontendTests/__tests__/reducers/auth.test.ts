@@ -238,7 +238,5 @@ describe('auth reducer', () => {
             })
         });
     })
-
-
 });
 

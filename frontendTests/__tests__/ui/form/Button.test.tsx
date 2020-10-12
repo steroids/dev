@@ -11,7 +11,7 @@ describe('Button tests', () => {
     describe('Static props', () => {
         const props = {
             label: 'Button',
-            // icon: 'create', //TODO
+            // icon: 'foo', TODO: add test 'should render icon'
             type: 'submit',
             color: 'warning',
             outline: true,
@@ -28,11 +28,6 @@ describe('Button tests', () => {
         it('should render label', () => {
             expect(wrapper.find('.ButtonView__label')).toHaveText(props.label);
         });
-
-        //TODO
-        // it('should render icon', () => {
-        //     expect(wrapper.find('.ButtonView__icon')).toExist();
-        // });
 
         it('should have right type', () => {
             expect(wrapper.find('button')).toHaveProp('type', props.type);

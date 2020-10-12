@@ -15,7 +15,7 @@ describe('InputField tests', () => {
             required: true,
             className: 'test',
             placeholder: 'test',
-            // isInvalid: true,
+            //errors: [{foo: 'bar'}], TODO: add test 'should have right is-invalid modifier'
             style: {width: '120px'},
         };
 
@@ -36,10 +36,6 @@ describe('InputField tests', () => {
         it('should have right external className', () => {
             expect(wrapper.find('InputFieldView')).toHaveClassName(props.className);
         });
-        //TODO
-        // it('should have right is-invalid modifier', () => {
-        //     expect(wrapper.find('input')).toHaveClassName('is-invalid');
-        // });
         it('should be disabled ', () => {
             expect(wrapper.find('input')).toBeDisabled();
         });
@@ -60,6 +56,4 @@ describe('InputField tests', () => {
             expect(wrapper.find('input')).toHaveProp('value', 'test');
         });
     })
-
-
 });

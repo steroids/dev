@@ -5,6 +5,8 @@ import HtmlComponent from '@steroidsjs/native/components/HtmlComponent';
 
 import style from './style';
 
+process.env.PLATFORM = 'mobile'
+
 @application({
     components: {
         html: {

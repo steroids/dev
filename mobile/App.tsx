@@ -2,6 +2,7 @@ import React from 'react';
 import {application} from '@steroidsjs/core/hoc';
 import NativeRouter from '@steroidsjs/native/ui/NativeRouter';
 import HtmlComponent from '@steroidsjs/native/components/HtmlComponent';
+import {getDefaultComponentsStyles} from '@steroidsjs/native/style/index';
 
 import style from './style';
 
@@ -14,7 +15,7 @@ process.env.PLATFORM = 'mobile'
             ...style,
         },
     },
-    onInit: ({ui}) => {
+    onInit: ({ui, html}) => {
         // Automatically import all views
         ui.addViews({
             'form.InputFieldView': require('@steroidsjs/native/ui/form/InputField').default,
@@ -31,6 +32,12 @@ process.env.PLATFORM = 'mobile'
             'layout.NotificationsItemView': require('@steroidsjs/native/ui/layout/Notifications/NotificationItemView').default,
             'icon.IconView': require('@steroidsjs/native/ui/icon/IconView').default,
         });
+
+        html.addStyles([
+            ...getDefaultComponentsStyles(),
+            // applying custom project-level styles
+            require('./style/InputFieldViewCustomStyles').default,
+        ]);
 
         ui.addIcons(require('@steroidsjs/native/assets/icons').default);
     },

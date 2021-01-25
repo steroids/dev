@@ -1,34 +1,21 @@
-module.exports = {
-    presets: [
-        '@babel/preset-env',
-        '@babel/preset-react',
-        '@babel/preset-typescript'
-    ],
-    plugins: [
-        ['@babel/plugin-proposal-decorators', {legacy: true}],
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-transform-runtime",
-    ],
-};
-
 // TODO for RN replace with this config
-// module.exports = function (api) {
-//     api.cache(false);
-//     return {
-//         plugins: [
-//             ['module-resolver', {
-//                 'root': ['./mobile/src'],
-//                 'alias': {
-//                     'reducers': __dirname + '/mobile/src/reducers',
-//                     '@steroidsjs/core': __dirname + '/steroids/react',
-//                     '@steroidsjs/native': __dirname + '/steroids/react-native',
-//                 },
-//             }],
-//             ["@babel/plugin-proposal-decorators", { "legacy": true }]
-//         ],
-//         presets: [
-//             'babel-preset-expo',
-//         ],
-//     };
-// };
+module.exports = function (api) {
+    api.cache(false);
+    return {
+        plugins: [
+            ['module-resolver', {
+                'root': ['./mobile/src'],
+                'alias': {
+                    'reducers': __dirname + '/mobile/src/reducers',
+                    '@steroidsjs/core': __dirname + '/steroids/react',
+                    '@steroidsjs/native': __dirname + '/steroids/react-native',
+                },
+            }],
+            ["@babel/plugin-proposal-decorators", { "legacy": true }]
+        ],
+        presets: [
+            'babel-preset-expo',
+        ],
+    };
+};
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {Alert, ScrollView, Text, TouchableNativeFeedback, View} from 'react-native';
+import {Alert, Image, ScrollView, Text, TouchableNativeFeedback, View} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {bem} from '@steroidsjs/core/hoc';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';

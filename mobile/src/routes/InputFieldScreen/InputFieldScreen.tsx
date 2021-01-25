@@ -13,6 +13,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {bem} from '@steroidsjs/core/hoc';
 import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
 import styles from './InputFieldScreenStyles';
+import Touchable from '@steroidsjs/native/utils/Touchable';
 
 interface IInputScreenPrivateProps extends IBemHocOutput {
     navigation: StackNavigationProp<any, any>,
@@ -33,6 +34,14 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                 keyboardVerticalOffset={100}
             >
                 <ScrollView style={bem('screen')}>
+                    <Text style={bem('h1')}>Custom styles in place</Text>
+                    <View>
+                        <InputField
+                            style={bem.element('input', {custom: true})}
+                            label={'This input is required to fill'}
+                            required={true}
+                        />
+                    </View>
                     <Text style={bem('h1')}>Input field</Text>
                     <View>
                         <Text style={bem('h5')}>Label</Text>
@@ -51,23 +60,23 @@ export default class InputFieldScreen extends React.Component<IInputScreenPrivat
                         <InputField
                             size={'sm'}
                             style={bem(bem.element('input'))}
-                            prefixElement={require("../../../assets/icon.png")}
+                            addonBefore={require("../../../assets/icon.png")}
                         />
                         <InputField
                             size={'md'}
                             style={bem(bem.element('input'))}
-                            suffixElement={require("../../../assets/icon.png")}
+                            addonAfter={require("../../../assets/icon.png")}
                         />
                         <InputField
                             size={'lg'}
                             style={bem(bem.element('input'))}
-                            suffixElement={require("../../../assets/icon.png")}
-                            prefixElement={require("../../../assets/icon.png")}
+                            addonAfter={require("../../../assets/icon.png")}
+                            addonBefore={require("../../../assets/icon.png")}
                         />
                         <InputField
                             size={'lg'}
                             style={bem(bem.element('input'))}
-                            prefixElement={<ClickableIcon/>}
+                            addonBefore={<ClickableIcon/>}
                             placeholder={'<--- This is clickable'}
                         />
                     </View>
@@ -178,7 +187,7 @@ class ClickableIcon extends React.Component<any, any>{
         }
     }
     render() {
-        return <TouchableNativeFeedback onPress={() => {this.setState({clicked: !this.state.clicked})}}>
+        return <Touchable onPress={() => {this.setState({clicked: !this.state.clicked})}}>
             {!this.state.clicked && (
                 <Image
                     source={require("../../../assets/icon.png")}
@@ -187,6 +196,6 @@ class ClickableIcon extends React.Component<any, any>{
             ) || (
                 <ActivityIndicator color={'gray'} size={'large'}/>
             )}
-        </TouchableNativeFeedback>;
+        </Touchable>;
     }
 }

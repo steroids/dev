@@ -202,6 +202,8 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
             treeItems,
             demos,
         };
+
+        console.time('ReactPage');
     }
 
     componentDidMount() {
@@ -213,6 +215,8 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
                 path: 'index',
             }))
         }
+
+        setTimeout(() => console.timeEnd('ReactPage'));
     }
 
     componentDidUpdate() {

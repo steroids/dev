@@ -1,7 +1,7 @@
 import IndexPage from './IndexPage';
-import ReactPage from './ReactPage';
+//import ReactPage from './ReactPage';
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
-import Yii2Page from './Yii2Page/Yii2Page';
+//import Yii2Page from './Yii2Page/Yii2Page';
 
 export const ROUTE_ROOT = 'root';
 export const ROUTE_YII2 = 'yii2';
@@ -15,7 +15,7 @@ export default {
     path: '/',
     component: IndexPage,
     roles,
-    items: {
+    /*items: {
         [ROUTE_YII2]: {
             label: 'Backend Yii2',
             path: '/yii2/:category?/:path?',
@@ -28,5 +28,5 @@ export default {
             component: ReactPage,
             roles,
         },
-    },
+    },*/
 } as IRouteItem;

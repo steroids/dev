@@ -20,7 +20,7 @@ describe('Button tests', () => {
             disabled: true,
         } as const;
 
-        const wrapper = mountInApp(<Button {...props}/>);
+        const wrapper = mountInApp(<Button {...props} />);
 
         it('should static props transmitted unchanged', () => {
             expect(wrapper.find('ButtonView')).toHaveProp(props);
@@ -33,7 +33,7 @@ describe('Button tests', () => {
             expect(wrapper.find('button')).toHaveProp('type', props.type);
         });
         it('should have right color modifier', () => {
-            expect(wrapper.find('button')).toHaveClassName('ButtonView_color_' + props.color);
+            expect(wrapper.find('button')).toHaveClassName(`ButtonView_color_${props.color}`);
         });
         it('should have right outline modifier', () => {
             expect(wrapper.find('button')).toHaveClassName('ButtonView_outline');
@@ -51,31 +51,30 @@ describe('Button tests', () => {
 
     describe('Conditional props', () => {
         it('should render "a" tag with props tag', () => {
-            const wrapper = mountInApp(<Button tag={'a'}/>);
+            const wrapper = mountInApp(<Button tag='a' />);
             expect(wrapper.find('a')).toExist();
         });
 
         it('should render "a" tag with props url', () => {
-            const wrapper = mountInApp(<Button url={'https://ya.ru'}/>);
+            const wrapper = mountInApp(<Button url='https://ya.ru' />);
             expect(wrapper.find('a')).toExist();
         });
 
         it('should render "a" tag with props link', () => {
-            const wrapper = mountInApp(<Button link={true}/>);
+            const wrapper = mountInApp(<Button link />);
             expect(wrapper.find('a')).toExist();
         });
     });
 
     describe('Actions', () => {
-
-        const asyncClick = jest.fn(() => new Promise(res => {
-            setTimeout(() => res(), 3000)
+        const asyncClick = jest.fn(() => new Promise<void>(res => {
+            setTimeout(() => res(), 3000);
         }));
 
         const flushPromises = () => new Promise(setImmediate);
 
         it('should isLoading toggling when onClick return Promise', async () => {
-            const wrapper = mountInApp(<Button onClick={asyncClick}/>);
+            const wrapper = mountInApp(<Button onClick={asyncClick} />);
             jest.useFakeTimers();
 
             expect(wrapper.find('ButtonView').props().isLoading).toBeFalsy();
@@ -92,6 +91,6 @@ describe('Button tests', () => {
             wrapper.update();
 
             expect(wrapper.find('ButtonView').props().isLoading).toBeFalsy();
-        })
+        });
     });
 });

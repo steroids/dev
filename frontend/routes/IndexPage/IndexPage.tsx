@@ -9,6 +9,12 @@ export default class IndexPage extends React.PureComponent<IBemHocOutput> {
 
     static propTypes = {};
 
+    constructor(props) {
+        super(props);
+
+        console.log('zzz', props.bem);
+    }
+
     render() {
         const bem = this.props.bem;
         return (

@@ -28,7 +28,7 @@ const prepare = (action, dispatch, getState) => {
         return action
             .then(payload => prepare(payload, dispatch, getState))
             .catch(e => {
-                this.errorHandler(e, p => prepare(p, dispatch, getState));
+                throw e;
             });
     }
     // Default case
@@ -36,7 +36,7 @@ const prepare = (action, dispatch, getState) => {
         try {
             return dispatch(action);
         } catch (e) {
-            this.errorHandler(e, p => prepare(p, dispatch, getState));
+            throw e;
         }
     }
     return action;

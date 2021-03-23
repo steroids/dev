@@ -58,17 +58,6 @@ return [
             'm::steroids\\auth\\models\\AuthConfirm::create',
             'm::steroids\\auth\\models\\AuthConfirm::update',
             'm::steroids\\auth\\models\\AuthConfirm::delete',
-            'm::steroids\\auth\\models\\AuthConfirm::id',
-            'm::steroids\\auth\\models\\AuthConfirm::userId',
-            'm::steroids\\auth\\models\\AuthConfirm::code',
-            'm::steroids\\auth\\models\\AuthConfirm::isConfirmed',
-            'm::steroids\\auth\\models\\AuthConfirm::createTime',
-            'm::steroids\\auth\\models\\AuthConfirm::updateTime',
-            'm::steroids\\auth\\models\\AuthConfirm::expireTime',
-            'm::steroids\\auth\\models\\AuthConfirm::value',
-            'm::steroids\\auth\\models\\AuthConfirm::type',
-            'm::steroids\\auth\\models\\AuthConfirm::uid',
-            'm::steroids\\auth\\models\\AuthConfirm::is2Fa',
         ],
     ],
     'm::steroids\\auth\\models\\AuthConfirm::view' => [
@@ -87,123 +76,6 @@ return [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\auth\\models\\AuthConfirm::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::id::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::userId::view',
-            'm::steroids\\auth\\models\\AuthConfirm::userId::create',
-            'm::steroids\\auth\\models\\AuthConfirm::userId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::userId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::code' => [
-        'type' => 2,
-        'description' => 'code',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::code::view',
-            'm::steroids\\auth\\models\\AuthConfirm::code::create',
-            'm::steroids\\auth\\models\\AuthConfirm::code::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::code::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::code::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::code::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::isConfirmed' => [
-        'type' => 2,
-        'description' => 'isConfirmed',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::isConfirmed::view',
-            'm::steroids\\auth\\models\\AuthConfirm::isConfirmed::create',
-            'm::steroids\\auth\\models\\AuthConfirm::isConfirmed::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::isConfirmed::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::isConfirmed::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::isConfirmed::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::createTime::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::updateTime' => [
-        'type' => 2,
-        'description' => 'updateTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::updateTime::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::updateTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::expireTime' => [
-        'type' => 2,
-        'description' => 'expireTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::expireTime::view',
-            'm::steroids\\auth\\models\\AuthConfirm::expireTime::create',
-            'm::steroids\\auth\\models\\AuthConfirm::expireTime::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::expireTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::expireTime::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::expireTime::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::steroids\\auth\\models\\AuthLogin' => [
         'type' => 2,
         'description' => 'steroids\\auth\\models\\AuthLogin',
@@ -212,16 +84,6 @@ return [
             'm::steroids\\auth\\models\\AuthLogin::create',
             'm::steroids\\auth\\models\\AuthLogin::update',
             'm::steroids\\auth\\models\\AuthLogin::delete',
-            'm::steroids\\auth\\models\\AuthLogin::id',
-            'm::steroids\\auth\\models\\AuthLogin::userId',
-            'm::steroids\\auth\\models\\AuthLogin::authId',
-            'm::steroids\\auth\\models\\AuthLogin::accessToken',
-            'm::steroids\\auth\\models\\AuthLogin::wsToken',
-            'm::steroids\\auth\\models\\AuthLogin::ipAddress',
-            'm::steroids\\auth\\models\\AuthLogin::location',
-            'm::steroids\\auth\\models\\AuthLogin::userAgent',
-            'm::steroids\\auth\\models\\AuthLogin::createTime',
-            'm::steroids\\auth\\models\\AuthLogin::expireTime',
         ],
     ],
     'm::steroids\\auth\\models\\AuthLogin::view' => [
@@ -240,196 +102,6 @@ return [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\auth\\models\\AuthLogin::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::id::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::userId::view',
-            'm::steroids\\auth\\models\\AuthLogin::userId::create',
-            'm::steroids\\auth\\models\\AuthLogin::userId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::authId' => [
-        'type' => 2,
-        'description' => 'authId',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::authId::view',
-            'm::steroids\\auth\\models\\AuthLogin::authId::create',
-            'm::steroids\\auth\\models\\AuthLogin::authId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::authId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::authId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::authId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::accessToken' => [
-        'type' => 2,
-        'description' => 'accessToken',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::accessToken::view',
-            'm::steroids\\auth\\models\\AuthLogin::accessToken::create',
-            'm::steroids\\auth\\models\\AuthLogin::accessToken::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::accessToken::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::accessToken::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::accessToken::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::wsToken' => [
-        'type' => 2,
-        'description' => 'wsToken',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::wsToken::view',
-            'm::steroids\\auth\\models\\AuthLogin::wsToken::create',
-            'm::steroids\\auth\\models\\AuthLogin::wsToken::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::wsToken::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::wsToken::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::wsToken::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::ipAddress' => [
-        'type' => 2,
-        'description' => 'ipAddress',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::ipAddress::view',
-            'm::steroids\\auth\\models\\AuthLogin::ipAddress::create',
-            'm::steroids\\auth\\models\\AuthLogin::ipAddress::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::ipAddress::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::ipAddress::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::ipAddress::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::location' => [
-        'type' => 2,
-        'description' => 'location',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::location::view',
-            'm::steroids\\auth\\models\\AuthLogin::location::create',
-            'm::steroids\\auth\\models\\AuthLogin::location::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::location::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::location::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::location::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userAgent' => [
-        'type' => 2,
-        'description' => 'userAgent',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::userAgent::view',
-            'm::steroids\\auth\\models\\AuthLogin::userAgent::create',
-            'm::steroids\\auth\\models\\AuthLogin::userAgent::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userAgent::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userAgent::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::userAgent::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::createTime::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::expireTime' => [
-        'type' => 2,
-        'description' => 'expireTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthLogin::expireTime::view',
-            'm::steroids\\auth\\models\\AuthLogin::expireTime::create',
-            'm::steroids\\auth\\models\\AuthLogin::expireTime::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::expireTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::expireTime::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthLogin::expireTime::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::steroids\\auth\\models\\AuthSocial' => [
         'type' => 2,
         'description' => 'steroids\\auth\\models\\AuthSocial',
@@ -438,14 +110,6 @@ return [
             'm::steroids\\auth\\models\\AuthSocial::create',
             'm::steroids\\auth\\models\\AuthSocial::update',
             'm::steroids\\auth\\models\\AuthSocial::delete',
-            'm::steroids\\auth\\models\\AuthSocial::id',
-            'm::steroids\\auth\\models\\AuthSocial::userId',
-            'm::steroids\\auth\\models\\AuthSocial::externalId',
-            'm::steroids\\auth\\models\\AuthSocial::socialName',
-            'm::steroids\\auth\\models\\AuthSocial::createTime',
-            'm::steroids\\auth\\models\\AuthSocial::updateTime',
-            'm::steroids\\auth\\models\\AuthSocial::uid',
-            'm::steroids\\auth\\models\\AuthSocial::profileJson',
         ],
     ],
     'm::steroids\\auth\\models\\AuthSocial::view' => [
@@ -464,186 +128,6 @@ return [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\auth\\models\\AuthSocial::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::id::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::userId::view',
-            'm::steroids\\auth\\models\\AuthSocial::userId::create',
-            'm::steroids\\auth\\models\\AuthSocial::userId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::userId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::externalId' => [
-        'type' => 2,
-        'description' => 'externalId',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::externalId::view',
-            'm::steroids\\auth\\models\\AuthSocial::externalId::create',
-            'm::steroids\\auth\\models\\AuthSocial::externalId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::externalId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::externalId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::externalId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::socialName' => [
-        'type' => 2,
-        'description' => 'socialName',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::socialName::view',
-            'm::steroids\\auth\\models\\AuthSocial::socialName::create',
-            'm::steroids\\auth\\models\\AuthSocial::socialName::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::socialName::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::socialName::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::socialName::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::createTime::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::updateTime' => [
-        'type' => 2,
-        'description' => 'updateTime',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::updateTime::view',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::updateTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::uid' => [
-        'type' => 2,
-        'description' => 'uid',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::uid::view',
-            'm::steroids\\auth\\models\\AuthSocial::uid::create',
-            'm::steroids\\auth\\models\\AuthSocial::uid::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::uid::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::uid::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::uid::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::profileJson' => [
-        'type' => 2,
-        'description' => 'profileJson',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthSocial::profileJson::view',
-            'm::steroids\\auth\\models\\AuthSocial::profileJson::create',
-            'm::steroids\\auth\\models\\AuthSocial::profileJson::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::profileJson::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::profileJson::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthSocial::profileJson::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::value' => [
-        'type' => 2,
-        'description' => 'value',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::value::view',
-            'm::steroids\\auth\\models\\AuthConfirm::value::create',
-            'm::steroids\\auth\\models\\AuthConfirm::value::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::value::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::value::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::value::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::type' => [
-        'type' => 2,
-        'description' => 'type',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::type::view',
-            'm::steroids\\auth\\models\\AuthConfirm::type::create',
-            'm::steroids\\auth\\models\\AuthConfirm::type::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::type::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::type::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::type::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::app\\user\\models\\User' => [
         'type' => 2,
         'description' => 'app\\user\\models\\User',
@@ -652,17 +136,6 @@ return [
             'm::app\\user\\models\\User::create',
             'm::app\\user\\models\\User::update',
             'm::app\\user\\models\\User::delete',
-            'm::app\\user\\models\\User::id',
-            'm::app\\user\\models\\User::role',
-            'm::app\\user\\models\\User::login',
-            'm::app\\user\\models\\User::username',
-            'm::app\\user\\models\\User::email',
-            'm::app\\user\\models\\User::phone',
-            'm::app\\user\\models\\User::passwordHash',
-            'm::app\\user\\models\\User::uiLanguage',
-            'm::app\\user\\models\\User::isBanned',
-            'm::app\\user\\models\\User::createTime',
-            'm::app\\user\\models\\User::updateTime',
         ],
     ],
     'm::app\\user\\models\\User::view' => [
@@ -680,207 +153,6 @@ return [
     'm::app\\user\\models\\User::delete' => [
         'type' => 2,
         'description' => 'delete',
-    ],
-    'm::app\\user\\models\\User::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::app\\user\\models\\User::id::view',
-        ],
-    ],
-    'm::app\\user\\models\\User::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::role' => [
-        'type' => 2,
-        'description' => 'role',
-        'children' => [
-            'm::app\\user\\models\\User::role::view',
-            'm::app\\user\\models\\User::role::create',
-            'm::app\\user\\models\\User::role::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::role::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::role::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::role::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::login' => [
-        'type' => 2,
-        'description' => 'login',
-        'children' => [
-            'm::app\\user\\models\\User::login::view',
-            'm::app\\user\\models\\User::login::create',
-            'm::app\\user\\models\\User::login::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::login::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::login::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::login::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::username' => [
-        'type' => 2,
-        'description' => 'username',
-        'children' => [
-            'm::app\\user\\models\\User::username::view',
-            'm::app\\user\\models\\User::username::create',
-            'm::app\\user\\models\\User::username::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::username::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::username::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::username::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::email' => [
-        'type' => 2,
-        'description' => 'email',
-        'children' => [
-            'm::app\\user\\models\\User::email::view',
-            'm::app\\user\\models\\User::email::create',
-            'm::app\\user\\models\\User::email::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::email::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::email::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::email::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::phone' => [
-        'type' => 2,
-        'description' => 'phone',
-        'children' => [
-            'm::app\\user\\models\\User::phone::view',
-            'm::app\\user\\models\\User::phone::create',
-            'm::app\\user\\models\\User::phone::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::phone::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::phone::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::phone::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::passwordHash' => [
-        'type' => 2,
-        'description' => 'passwordHash',
-        'children' => [
-            'm::app\\user\\models\\User::passwordHash::view',
-            'm::app\\user\\models\\User::passwordHash::create',
-            'm::app\\user\\models\\User::passwordHash::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::passwordHash::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::passwordHash::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::passwordHash::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::uiLanguage' => [
-        'type' => 2,
-        'description' => 'uiLanguage',
-        'children' => [
-            'm::app\\user\\models\\User::uiLanguage::view',
-            'm::app\\user\\models\\User::uiLanguage::create',
-            'm::app\\user\\models\\User::uiLanguage::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::uiLanguage::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::uiLanguage::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::uiLanguage::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::isBanned' => [
-        'type' => 2,
-        'description' => 'isBanned',
-        'children' => [
-            'm::app\\user\\models\\User::isBanned::view',
-            'm::app\\user\\models\\User::isBanned::create',
-            'm::app\\user\\models\\User::isBanned::update',
-        ],
-    ],
-    'm::app\\user\\models\\User::isBanned::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::isBanned::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::app\\user\\models\\User::isBanned::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::app\\user\\models\\User::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::app\\user\\models\\User::createTime::view',
-        ],
-    ],
-    'm::app\\user\\models\\User::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::app\\user\\models\\User::updateTime' => [
-        'type' => 2,
-        'description' => 'updateTime',
-        'children' => [
-            'm::app\\user\\models\\User::updateTime::view',
-        ],
-    ],
-    'm::app\\user\\models\\User::updateTime::view' => [
-        'type' => 2,
-        'description' => 'view',
     ],
     'a::gii::index' => [
         'type' => 2,
@@ -951,11 +223,6 @@ return [
             'm::steroids\\billing\\models\\BillingAccount::create',
             'm::steroids\\billing\\models\\BillingAccount::update',
             'm::steroids\\billing\\models\\BillingAccount::delete',
-            'm::steroids\\billing\\models\\BillingAccount::id',
-            'm::steroids\\billing\\models\\BillingAccount::name',
-            'm::steroids\\billing\\models\\BillingAccount::userId',
-            'm::steroids\\billing\\models\\BillingAccount::currencyId',
-            'm::steroids\\billing\\models\\BillingAccount::balance',
         ],
     ],
     'm::steroids\\billing\\models\\BillingAccount::view' => [
@@ -974,101 +241,6 @@ return [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\billing\\models\\BillingAccount::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingAccount::id::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::name' => [
-        'type' => 2,
-        'description' => 'name',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingAccount::name::view',
-            'm::steroids\\billing\\models\\BillingAccount::name::create',
-            'm::steroids\\billing\\models\\BillingAccount::name::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::name::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::name::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::name::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingAccount::userId::view',
-            'm::steroids\\billing\\models\\BillingAccount::userId::create',
-            'm::steroids\\billing\\models\\BillingAccount::userId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::userId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::currencyId' => [
-        'type' => 2,
-        'description' => 'currencyId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingAccount::currencyId::view',
-            'm::steroids\\billing\\models\\BillingAccount::currencyId::create',
-            'm::steroids\\billing\\models\\BillingAccount::currencyId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::currencyId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::currencyId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::currencyId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::balance' => [
-        'type' => 2,
-        'description' => 'balance',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingAccount::balance::view',
-            'm::steroids\\billing\\models\\BillingAccount::balance::create',
-            'm::steroids\\billing\\models\\BillingAccount::balance::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::balance::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::balance::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingAccount::balance::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::steroids\\billing\\models\\BillingCurrency' => [
         'type' => 2,
         'description' => 'steroids\\billing\\models\\BillingCurrency',
@@ -1077,15 +249,6 @@ return [
             'm::steroids\\billing\\models\\BillingCurrency::create',
             'm::steroids\\billing\\models\\BillingCurrency::update',
             'm::steroids\\billing\\models\\BillingCurrency::delete',
-            'm::steroids\\billing\\models\\BillingCurrency::id',
-            'm::steroids\\billing\\models\\BillingCurrency::code',
-            'm::steroids\\billing\\models\\BillingCurrency::precision',
-            'm::steroids\\billing\\models\\BillingCurrency::label',
-            'm::steroids\\billing\\models\\BillingCurrency::rateUsd',
-            'm::steroids\\billing\\models\\BillingCurrency::ratePrecision',
-            'm::steroids\\billing\\models\\BillingCurrency::isVisible',
-            'm::steroids\\billing\\models\\BillingCurrency::createTime',
-            'm::steroids\\billing\\models\\BillingCurrency::updateTime',
         ],
     ],
     'm::steroids\\billing\\models\\BillingCurrency::view' => [
@@ -1104,165 +267,6 @@ return [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\billing\\models\\BillingCurrency::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::id::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::code' => [
-        'type' => 2,
-        'description' => 'code',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::code::view',
-            'm::steroids\\billing\\models\\BillingCurrency::code::create',
-            'm::steroids\\billing\\models\\BillingCurrency::code::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::code::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::code::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::code::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::precision' => [
-        'type' => 2,
-        'description' => 'precision',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::precision::view',
-            'm::steroids\\billing\\models\\BillingCurrency::precision::create',
-            'm::steroids\\billing\\models\\BillingCurrency::precision::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::precision::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::precision::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::precision::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::label' => [
-        'type' => 2,
-        'description' => 'label',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::label::view',
-            'm::steroids\\billing\\models\\BillingCurrency::label::create',
-            'm::steroids\\billing\\models\\BillingCurrency::label::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::label::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::label::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::label::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::rateUsd' => [
-        'type' => 2,
-        'description' => 'rateUsd',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::rateUsd::view',
-            'm::steroids\\billing\\models\\BillingCurrency::rateUsd::create',
-            'm::steroids\\billing\\models\\BillingCurrency::rateUsd::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::rateUsd::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::rateUsd::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::rateUsd::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::ratePrecision' => [
-        'type' => 2,
-        'description' => 'ratePrecision',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::ratePrecision::view',
-            'm::steroids\\billing\\models\\BillingCurrency::ratePrecision::create',
-            'm::steroids\\billing\\models\\BillingCurrency::ratePrecision::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::ratePrecision::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::ratePrecision::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::ratePrecision::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::isVisible' => [
-        'type' => 2,
-        'description' => 'isVisible',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::isVisible::view',
-            'm::steroids\\billing\\models\\BillingCurrency::isVisible::create',
-            'm::steroids\\billing\\models\\BillingCurrency::isVisible::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::isVisible::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::isVisible::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::isVisible::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::createTime::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::updateTime' => [
-        'type' => 2,
-        'description' => 'updateTime',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingCurrency::updateTime::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingCurrency::updateTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
     'm::steroids\\billing\\models\\BillingOperation' => [
         'type' => 2,
         'description' => 'steroids\\billing\\models\\BillingOperation',
@@ -1271,14 +275,6 @@ return [
             'm::steroids\\billing\\models\\BillingOperation::create',
             'm::steroids\\billing\\models\\BillingOperation::update',
             'm::steroids\\billing\\models\\BillingOperation::delete',
-            'm::steroids\\billing\\models\\BillingOperation::id',
-            'm::steroids\\billing\\models\\BillingOperation::name',
-            'm::steroids\\billing\\models\\BillingOperation::delta',
-            'm::steroids\\billing\\models\\BillingOperation::createTime',
-            'm::steroids\\billing\\models\\BillingOperation::currencyId',
-            'm::steroids\\billing\\models\\BillingOperation::fromAccountId',
-            'm::steroids\\billing\\models\\BillingOperation::toAccountId',
-            'm::steroids\\billing\\models\\BillingOperation::documentId',
         ],
     ],
     'm::steroids\\billing\\models\\BillingOperation::view' => [
@@ -1297,175 +293,6 @@ return [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\billing\\models\\BillingOperation::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::id::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::name' => [
-        'type' => 2,
-        'description' => 'name',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::name::view',
-            'm::steroids\\billing\\models\\BillingOperation::name::create',
-            'm::steroids\\billing\\models\\BillingOperation::name::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::name::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::name::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::name::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::delta' => [
-        'type' => 2,
-        'description' => 'delta',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::delta::view',
-            'm::steroids\\billing\\models\\BillingOperation::delta::create',
-            'm::steroids\\billing\\models\\BillingOperation::delta::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::delta::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::delta::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::delta::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::createTime::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::uid' => [
-        'type' => 2,
-        'description' => 'uid',
-        'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::uid::view',
-            'm::steroids\\auth\\models\\AuthConfirm::uid::create',
-            'm::steroids\\auth\\models\\AuthConfirm::uid::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::uid::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::uid::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\AuthConfirm::uid::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::currencyId' => [
-        'type' => 2,
-        'description' => 'currencyId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::currencyId::view',
-            'm::steroids\\billing\\models\\BillingOperation::currencyId::create',
-            'm::steroids\\billing\\models\\BillingOperation::currencyId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::currencyId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::currencyId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::currencyId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::fromAccountId' => [
-        'type' => 2,
-        'description' => 'fromAccountId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::fromAccountId::view',
-            'm::steroids\\billing\\models\\BillingOperation::fromAccountId::create',
-            'm::steroids\\billing\\models\\BillingOperation::fromAccountId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::fromAccountId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::fromAccountId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::fromAccountId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::toAccountId' => [
-        'type' => 2,
-        'description' => 'toAccountId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::toAccountId::view',
-            'm::steroids\\billing\\models\\BillingOperation::toAccountId::create',
-            'm::steroids\\billing\\models\\BillingOperation::toAccountId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::toAccountId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::toAccountId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::toAccountId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::documentId' => [
-        'type' => 2,
-        'description' => 'documentId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingOperation::documentId::view',
-            'm::steroids\\billing\\models\\BillingOperation::documentId::create',
-            'm::steroids\\billing\\models\\BillingOperation::documentId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::documentId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::documentId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingOperation::documentId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
     'm::steroids\\billing\\models\\BillingManualDocument' => [
         'type' => 2,
         'description' => 'steroids\\billing\\models\\BillingManualDocument',
@@ -1474,10 +301,6 @@ return [
             'm::steroids\\billing\\models\\BillingManualDocument::create',
             'm::steroids\\billing\\models\\BillingManualDocument::update',
             'm::steroids\\billing\\models\\BillingManualDocument::delete',
-            'm::steroids\\billing\\models\\BillingManualDocument::id',
-            'm::steroids\\billing\\models\\BillingManualDocument::userId',
-            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress',
-            'm::steroids\\billing\\models\\BillingManualDocument::comment',
         ],
     ],
     'm::steroids\\billing\\models\\BillingManualDocument::view' => [
@@ -1495,80 +318,6 @@ return [
     'm::steroids\\billing\\models\\BillingManualDocument::delete' => [
         'type' => 2,
         'description' => 'delete',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::id' => [
-        'type' => 2,
-        'description' => 'id',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingManualDocument::id::view',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::id::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingManualDocument::userId::view',
-            'm::steroids\\billing\\models\\BillingManualDocument::userId::create',
-            'm::steroids\\billing\\models\\BillingManualDocument::userId::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::userId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress' => [
-        'type' => 2,
-        'description' => 'ipAddress',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::view',
-            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::create',
-            'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::ipAddress::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::comment' => [
-        'type' => 2,
-        'description' => 'comment',
-        'children' => [
-            'm::steroids\\billing\\models\\BillingManualDocument::comment::view',
-            'm::steroids\\billing\\models\\BillingManualDocument::comment::create',
-            'm::steroids\\billing\\models\\BillingManualDocument::comment::update',
-        ],
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::comment::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::comment::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\billing\\models\\BillingManualDocument::comment::update' => [
-        'type' => 2,
-        'description' => 'update',
     ],
     'a::api::admin' => [
         'type' => 2,
@@ -1624,233 +373,264 @@ return [
         'type' => 2,
         'description' => 'currencies',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation' => [
+    'm::steroids\\auth\\models\\AuthTwoFactor' => [
         'type' => 2,
-        'description' => 'steroids\\auth\\models\\Auth2FaValidation',
+        'description' => 'steroids\\auth\\models\\AuthTwoFactor',
         'children' => [
-            'm::steroids\\auth\\models\\Auth2FaValidation::view',
-            'm::steroids\\auth\\models\\Auth2FaValidation::create',
-            'm::steroids\\auth\\models\\Auth2FaValidation::update',
-            'm::steroids\\auth\\models\\Auth2FaValidation::delete',
-            'm::steroids\\auth\\models\\Auth2FaValidation::id',
-            'm::steroids\\auth\\models\\Auth2FaValidation::createTime',
-            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType',
-            'm::steroids\\auth\\models\\Auth2FaValidation::userId',
+            'm::steroids\\auth\\models\\AuthTwoFactor::view',
+            'm::steroids\\auth\\models\\AuthTwoFactor::create',
+            'm::steroids\\auth\\models\\AuthTwoFactor::update',
+            'm::steroids\\auth\\models\\AuthTwoFactor::delete',
         ],
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::view' => [
+    'm::steroids\\auth\\models\\AuthTwoFactor::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::create' => [
+    'm::steroids\\auth\\models\\AuthTwoFactor::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::update' => [
+    'm::steroids\\auth\\models\\AuthTwoFactor::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::delete' => [
+    'm::steroids\\auth\\models\\AuthTwoFactor::delete' => [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::id' => [
+    'm::steroids\\document\\models\\Document' => [
         'type' => 2,
-        'description' => 'id',
+        'description' => 'steroids\\document\\models\\Document',
         'children' => [
-            'm::steroids\\auth\\models\\Auth2FaValidation::id::view',
+            'm::steroids\\document\\models\\Document::view',
+            'm::steroids\\document\\models\\Document::create',
+            'm::steroids\\document\\models\\Document::update',
+            'm::steroids\\document\\models\\Document::delete',
         ],
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::id::view' => [
+    'm::steroids\\document\\models\\Document::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::createTime' => [
-        'type' => 2,
-        'description' => 'createTime',
-        'children' => [
-            'm::steroids\\auth\\models\\Auth2FaValidation::createTime::view',
-            'm::steroids\\auth\\models\\Auth2FaValidation::createTime::create',
-            'm::steroids\\auth\\models\\Auth2FaValidation::createTime::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::createTime::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::createTime::create' => [
+    'm::steroids\\document\\models\\Document::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::createTime::update' => [
+    'm::steroids\\document\\models\\Document::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType' => [
-        'type' => 2,
-        'description' => 'authentificatorType',
-        'children' => [
-            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::view',
-            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::create',
-            'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::authentificatorType::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\auth\\models\\Auth2FaValidation::userId::view',
-            'm::steroids\\auth\\models\\Auth2FaValidation::userId::create',
-            'm::steroids\\auth\\models\\Auth2FaValidation::userId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::userId::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\Auth2FaValidation::userId::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys' => [
-        'type' => 2,
-        'description' => 'steroids\\auth\\models\\UserAuthentificatorKeys',
-        'children' => [
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::view',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::create',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::update',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::delete',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::id',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType',
-        ],
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::create' => [
-        'type' => 2,
-        'description' => 'create',
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::update' => [
-        'type' => 2,
-        'description' => 'update',
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::delete' => [
+    'm::steroids\\document\\models\\Document::delete' => [
         'type' => 2,
         'description' => 'delete',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::id' => [
+    'm::steroids\\document\\models\\DocumentCategory' => [
         'type' => 2,
-        'description' => 'id',
+        'description' => 'steroids\\document\\models\\DocumentCategory',
         'children' => [
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::id::view',
+            'm::steroids\\document\\models\\DocumentCategory::view',
+            'm::steroids\\document\\models\\DocumentCategory::create',
+            'm::steroids\\document\\models\\DocumentCategory::update',
+            'm::steroids\\document\\models\\DocumentCategory::delete',
         ],
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::id::view' => [
+    'm::steroids\\document\\models\\DocumentCategory::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId' => [
-        'type' => 2,
-        'description' => 'userId',
-        'children' => [
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::view',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::create',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::update',
-        ],
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::view' => [
-        'type' => 2,
-        'description' => 'view',
-    ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::create' => [
+    'm::steroids\\document\\models\\DocumentCategory::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::userId::update' => [
+    'm::steroids\\document\\models\\DocumentCategory::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey' => [
+    'm::steroids\\document\\models\\DocumentCategory::delete' => [
         'type' => 2,
-        'description' => 'secretKey',
+        'description' => 'delete',
+    ],
+    'm::steroids\\document\\models\\DocumentParam' => [
+        'type' => 2,
+        'description' => 'steroids\\document\\models\\DocumentParam',
         'children' => [
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::view',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::create',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::update',
+            'm::steroids\\document\\models\\DocumentParam::view',
+            'm::steroids\\document\\models\\DocumentParam::create',
+            'm::steroids\\document\\models\\DocumentParam::update',
+            'm::steroids\\document\\models\\DocumentParam::delete',
         ],
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::view' => [
+    'm::steroids\\document\\models\\DocumentParam::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::create' => [
+    'm::steroids\\document\\models\\DocumentParam::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::secretKey::update' => [
+    'm::steroids\\document\\models\\DocumentParam::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType' => [
+    'm::steroids\\document\\models\\DocumentParam::delete' => [
         'type' => 2,
-        'description' => 'authentificatorType',
+        'description' => 'delete',
+    ],
+    'm::steroids\\document\\models\\DocumentUser' => [
+        'type' => 2,
+        'description' => 'steroids\\document\\models\\DocumentUser',
         'children' => [
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::view',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::create',
-            'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::update',
+            'm::steroids\\document\\models\\DocumentUser::view',
+            'm::steroids\\document\\models\\DocumentUser::create',
+            'm::steroids\\document\\models\\DocumentUser::update',
+            'm::steroids\\document\\models\\DocumentUser::delete',
         ],
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::view' => [
+    'm::steroids\\document\\models\\DocumentUser::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::create' => [
+    'm::steroids\\document\\models\\DocumentUser::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::steroids\\auth\\models\\UserAuthentificatorKeys::authentificatorType::update' => [
+    'm::steroids\\document\\models\\DocumentUser::update' => [
         'type' => 2,
         'description' => 'update',
     ],
-    'm::steroids\\auth\\models\\AuthConfirm::is2Fa' => [
+    'm::steroids\\document\\models\\DocumentUser::delete' => [
         'type' => 2,
-        'description' => 'is2Fa',
+        'description' => 'delete',
+    ],
+    'm::steroids\\payment\\models\\PaymentMethod' => [
+        'type' => 2,
+        'description' => 'steroids\\payment\\models\\PaymentMethod',
         'children' => [
-            'm::steroids\\auth\\models\\AuthConfirm::is2Fa::view',
-            'm::steroids\\auth\\models\\AuthConfirm::is2Fa::create',
-            'm::steroids\\auth\\models\\AuthConfirm::is2Fa::update',
+            'm::steroids\\payment\\models\\PaymentMethod::view',
+            'm::steroids\\payment\\models\\PaymentMethod::create',
+            'm::steroids\\payment\\models\\PaymentMethod::update',
+            'm::steroids\\payment\\models\\PaymentMethod::delete',
         ],
     ],
-    'm::steroids\\auth\\models\\AuthConfirm::is2Fa::view' => [
+    'm::steroids\\payment\\models\\PaymentMethod::view' => [
         'type' => 2,
         'description' => 'view',
     ],
-    'm::steroids\\auth\\models\\AuthConfirm::is2Fa::create' => [
+    'm::steroids\\payment\\models\\PaymentMethod::create' => [
         'type' => 2,
         'description' => 'create',
     ],
-    'm::steroids\\auth\\models\\AuthConfirm::is2Fa::update' => [
+    'm::steroids\\payment\\models\\PaymentMethod::update' => [
         'type' => 2,
         'description' => 'update',
+    ],
+    'm::steroids\\payment\\models\\PaymentMethod::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\payment\\models\\PaymentMethodParam' => [
+        'type' => 2,
+        'description' => 'steroids\\payment\\models\\PaymentMethodParam',
+        'children' => [
+            'm::steroids\\payment\\models\\PaymentMethodParam::view',
+            'm::steroids\\payment\\models\\PaymentMethodParam::create',
+            'm::steroids\\payment\\models\\PaymentMethodParam::update',
+            'm::steroids\\payment\\models\\PaymentMethodParam::delete',
+        ],
+    ],
+    'm::steroids\\payment\\models\\PaymentMethodParam::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\payment\\models\\PaymentMethodParam::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\payment\\models\\PaymentMethodParam::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\payment\\models\\PaymentMethodParam::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrder' => [
+        'type' => 2,
+        'description' => 'steroids\\payment\\models\\PaymentOrder',
+        'children' => [
+            'm::steroids\\payment\\models\\PaymentOrder::view',
+            'm::steroids\\payment\\models\\PaymentOrder::create',
+            'm::steroids\\payment\\models\\PaymentOrder::update',
+            'm::steroids\\payment\\models\\PaymentOrder::delete',
+        ],
+    ],
+    'm::steroids\\payment\\models\\PaymentOrder::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrder::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrder::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrder::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrderItem' => [
+        'type' => 2,
+        'description' => 'steroids\\payment\\models\\PaymentOrderItem',
+        'children' => [
+            'm::steroids\\payment\\models\\PaymentOrderItem::view',
+            'm::steroids\\payment\\models\\PaymentOrderItem::create',
+            'm::steroids\\payment\\models\\PaymentOrderItem::update',
+            'm::steroids\\payment\\models\\PaymentOrderItem::delete',
+        ],
+    ],
+    'm::steroids\\payment\\models\\PaymentOrderItem::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrderItem::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrderItem::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\payment\\models\\PaymentOrderItem::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\payment\\models\\PaymentProviderLog' => [
+        'type' => 2,
+        'description' => 'steroids\\payment\\models\\PaymentProviderLog',
+        'children' => [
+            'm::steroids\\payment\\models\\PaymentProviderLog::view',
+            'm::steroids\\payment\\models\\PaymentProviderLog::create',
+            'm::steroids\\payment\\models\\PaymentProviderLog::update',
+            'm::steroids\\payment\\models\\PaymentProviderLog::delete',
+        ],
+    ],
+    'm::steroids\\payment\\models\\PaymentProviderLog::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\payment\\models\\PaymentProviderLog::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\payment\\models\\PaymentProviderLog::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\payment\\models\\PaymentProviderLog::delete' => [
+        'type' => 2,
+        'description' => 'delete',
     ],
 ];

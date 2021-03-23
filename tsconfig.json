@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "lib": ["dom", "esnext"],
@@ -9,9 +9,6 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "reducers/*": [
-        "steroids/react/reducers/*"
-      ],
       "@steroidsjs/core/*": [
         "steroids/react/*"
       ],
@@ -20,14 +17,12 @@
       ],
       "@steroidsjs/bootstrap/*": [
         "steroids/react-bootstrap/*"
-      ],
-      "@steroidsjs/native/*": [
-        "steroids/react-native/*"
       ]
     }
   },
-  "exclude": [
-    "mobile/*",
-    "steroids/react-native/*"
+  "include": [
+    "frontend/**/*",
+    "steroids/react/**/*",
+    "steroids/react-bootstrap/**/*",
   ]
 }

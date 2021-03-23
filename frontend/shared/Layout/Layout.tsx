@@ -1,77 +1,49 @@
 import * as React from 'react';
-//import {Notifications} from '@steroidsjs/core/ui/layout';
-import layout, {ILayoutHocOutput, STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hoc/layout';
 
-import {bem, components} from '@steroidsjs/core/hoc';
+import logo from 'static/logo-steroids.svg';
+import {useBem} from '@steroidsjs/core/hooks';
+import {Notifications} from '@steroidsjs/core/ui/layout';
+import Header from '@steroidsjs/core/ui/layout/Header';
+import Portal from '@steroidsjs/core/ui/layout/Portal';
+import useLayout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hooks/useLayout';
+import {ROUTE_ROOT} from '../../routes';
+
 import './Layout.scss';
 
-//import logo from 'static/logo-steroids.svg';
-import {IComponentsHocOutput} from '@steroidsjs/core/hoc/components';
-import {IBemHocOutput} from '@steroidsjs/core/hoc/bem';
-import {Button, Field, Form, InputField} from '@steroidsjs/core/ui/form';
-//import Header from '@steroidsjs/core/ui/layout/Header';
-//import {ROUTE_ROOT} from '../../routes';
-//import Portal from '@steroidsjs/core/ui/layout/Portal';
+export default function Layout(props) {
+    const bem = useBem('Layout');
+    const {status} = useLayout();
 
-@bem('Layout')
-@components('http')
-@layout()
-export default class Layout extends React.PureComponent<IBemHocOutput & IComponentsHocOutput & ILayoutHocOutput> {
-    renderContent() {
-        switch (this.props.status) {
+    const renderContent = () => {
+        switch (status) {
             case STATUS_LOADING:
                 return null;
 
             case STATUS_OK:
-                return this.props.children;
+                return props.children;
 
             default:
                 // TODO other statuses
-                return this.props.status;
+                return status;
         }
     }
 
-    render() {
-        return (
-            <div>
-                {this.props.status}
-                <Form
-                    formId='Qqq'
-                    layout='horizontal'
-                    initialValues={{
-                        foo: 'aaa',
-                    }}
-                >
-                    <Field
-                        attribute='foo'
-                        label={__('Foo name')}
-                        component={InputField}
-                    />
-                    <InputField
-                        attribute='bar'
-                        label={__('Bar name')}
-                    />
-                </Form>
+    return (
+        <div className={bem.block()}>
+            <Header
+                logo={{
+                    title: __('Steroids'),
+                    icon: logo,
+                }}
+                nav={{
+                    items: ROUTE_ROOT,
+                }}
+            />
+            <div className={bem.element('content')}>
+                {renderContent()}
+                <Notifications/>
+                <Portal/>
             </div>
-        );
-        /*const bem = this.props.bem;
-        return (
-            <div className={bem.block()}>
-                <Header
-                    logo={{
-                        title: 'Steroids',
-                        icon: logo,
-                    }}
-                    nav={{
-                        items: ROUTE_ROOT,
-                    }}
-                />
-                <div className={bem.element('content')}>
-                    <Notifications/>
-                    {this.renderContent()}
-                    <Portal/>
-                </div>
-            </div>
-        );*/
-    }
+        </div>
+    );
 }

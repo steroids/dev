@@ -32,7 +32,7 @@ export default function Layout(props) {
         <div className={bem.block()}>
             <Header
                 logo={{
-                    title: __('Steroids'),
+                    title: 'Steroids',
                     icon: logo,
                 }}
                 nav={{
@@ -41,8 +41,8 @@ export default function Layout(props) {
             />
             <div className={bem.element('content')}>
                 {renderContent()}
-                <Notifications/>
-                <Portal/>
+                {/*<Notifications/>*/}
+                {/*<Portal/>*/}
             </div>
         </div>
     );

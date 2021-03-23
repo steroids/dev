@@ -10,7 +10,7 @@ export default function Application() {
         routes: require('routes').default,
         layoutView: require('shared/Layout').default,
         onInit: ({ui}) => {
-            //components.ui.addViews(require('@steroidsjs/bootstrap').default);
+            ui.addViews(require('@steroidsjs/bootstrap').default);
             //ui.addFields(require('@steroidsjs/core/ui/form').default);
             //ui.addFormatters(require('@steroidsjs/core/ui/format').default);
             //ui.addIcons(require('@steroidsjs/bootstrap/icon/fontawesome').default);

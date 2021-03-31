@@ -41,7 +41,7 @@ export default function Layout(props) {
             />
             <div className={bem.element('content')}>
                 {renderContent()}
-                {/*<Notifications/>*/}
+                <Notifications/>
                 {/*<Portal/>*/}
             </div>
         </div>

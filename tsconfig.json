@@ -13,20 +13,22 @@
         "steroids/react/src/*"
       ],
       "@steroidsjs/bootstrap": [
-        "steroids/src/react-bootstrap"
+        "steroids/react-bootstrap/src"
       ],
       "@steroidsjs/bootstrap/*": [
-        "steroids/react-bootstrap/*"
+        "steroids/react-bootstrap/src/*"
       ]
     }
   },
   "include": [
     "frontend/**/*",
-    "steroids/react/**/*",
-    "steroids/react-bootstrap/**/*",
+    "steroids/react/src/**/*",
+    "steroids/react-bootstrap/src/**/*",
   ],
   // TODO fix eslint errors
   "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
     "steroids/react/hooks/useList.ts",
     "steroids/react-bootstrap/crud",
     "steroids/react-bootstrap/form",

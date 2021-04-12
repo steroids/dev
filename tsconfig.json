@@ -10,10 +10,10 @@
     "baseUrl": ".",
     "paths": {
       "@steroidsjs/core/*": [
-        "steroids/react/*"
+        "steroids/react/src/*"
       ],
       "@steroidsjs/bootstrap": [
-        "steroids/react-bootstrap"
+        "steroids/src/react-bootstrap"
       ],
       "@steroidsjs/bootstrap/*": [
         "steroids/react-bootstrap/*"
@@ -27,7 +27,6 @@
   ],
   // TODO fix eslint errors
   "exclude": [
-    "steroids/react/ui/nav/Tree",
     "steroids/react/hooks/useList.ts",
     "steroids/react-bootstrap/crud",
     "steroids/react-bootstrap/form",

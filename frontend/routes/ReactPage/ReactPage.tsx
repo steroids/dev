@@ -73,8 +73,6 @@ const getGithubUrl = (componentPath: string, exampleName: string) => {
 @connect()
 export default class ReactPage extends React.PureComponent<IReactPageProps, IReactPageState> {
 
-    static propTypes = {};
-
     constructor(props) {
         super(props);
 

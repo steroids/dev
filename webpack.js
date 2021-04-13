@@ -10,8 +10,10 @@ require('./steroids/react-webpack')
         webpack: {
             resolve: {
                 alias: {
-                    '@steroidsjs/core': __dirname + '/steroids/react',
-                    '@steroidsjs/bootstrap': __dirname + '/steroids/react-bootstrap',
+                    '@steroidsjs/core/build': __dirname + '/steroids/react/build',
+                    '@steroidsjs/core/docs': __dirname + '/steroids/react/docs',
+                    '@steroidsjs/core': __dirname + '/steroids/react/src',
+                    '@steroidsjs/bootstrap': __dirname + '/steroids/react-bootstrap/src',
                 },
             },
         },

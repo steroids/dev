@@ -4,6 +4,7 @@ import useApplication from '@steroidsjs/core/hooks/useApplication';
 
 import 'style/index.scss';
 import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
+import MetaComponent from '@steroidsjs/core/components/MetaComponent';
 
 export default function Application() {
     const {renderApplication} = useApplication({
@@ -12,7 +13,10 @@ export default function Application() {
         layoutView: require('shared/Layout').default,
         components: {
             locale: {
-               className: LocaleComponent,
+                className: LocaleComponent,
+            },
+            meta: {
+                className: MetaComponent,
             },
         },
         onInit: ({ui}) => {

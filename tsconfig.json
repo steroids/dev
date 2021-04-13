@@ -30,10 +30,10 @@
     "**/*.test.ts",
     "**/*.test.tsx",
     "steroids/react/hooks/useList.ts",
-    "steroids/react-bootstrap/crud",
-    "steroids/react-bootstrap/form",
-    "steroids/react-bootstrap/format",
-    "steroids/react-bootstrap/list",
-    "steroids/react-bootstrap/modal",
+    "steroids/react-bootstrap/src/crud",
+    "steroids/react-bootstrap/src/form",
+    "steroids/react-bootstrap/src/format",
+    "steroids/react-bootstrap/src/list",
+    "steroids/react-bootstrap/src/modal",
   ]
 }

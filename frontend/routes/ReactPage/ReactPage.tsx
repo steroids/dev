@@ -16,7 +16,6 @@ import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import {ROUTE_REACT} from '../index';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
 import DemoCard from './views/DemoCard';
-import * as autoDocs from '@steroidsjs/core/build/docs-autogen-result.json';
 import ApiTable from './views/ApiTable';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {IConnectHocOutput} from '@steroidsjs/core/hoc/connect';
@@ -69,8 +68,10 @@ const getGithubUrl = (componentPath: string, exampleName: string) => {
     return `https://github.com/steroids/react/blob/master/ui/${componentPath}/demo/${exampleName}.tsx`;
 };
 
-@bem('ReactPage')
+const autoDocs = require('@steroidsjs/core/build/docs-autogen-result.json');
+
 @connect()
+@bem('ReactPage')
 export default class ReactPage extends React.PureComponent<IReactPageProps, IReactPageState> {
 
     constructor(props) {

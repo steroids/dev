@@ -28,8 +28,8 @@ const createDynamicField = (componentId, Component) => {
         // ----------------------------------------
         // Resolve data provider
         const dispatch = useDispatch(); // eslint-disable-line react-hooks/rules-of-hooks
-        const {value, error} = useSelector(state => ({
-            error: _get(state, ['form', formId, 'errors', name]),
+        const {value, errors} = useSelector(state => ({
+            errors: _get(state, ['form', formId, 'errors', name]),
             value: _get(state, ['form', formId, 'values', name]),
         }));
         // ----------------------------------------
@@ -51,7 +51,7 @@ const createDynamicField = (componentId, Component) => {
         const wrapperProps = {
             componentId,
             formId,
-            error,
+            errors,
             input,
         };
 
@@ -83,7 +83,7 @@ export default function fieldWrapper<T extends any>(componentId, Component: T, o
                     required={_has(props, 'required') ? props.required : metaProps.required}
                     label={options.label === false ? null : (_has(props, 'label') ? props.label : metaProps.label)}
                     hint={_has(props, 'hint') ? props.hint : metaProps.hint}
-                    error={props.error}
+                    errors={props.errors}
                 >
                     <DynamicField {...props} />
                 </FieldLayout>

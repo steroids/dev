@@ -15,11 +15,10 @@ function InputField(props: any) {
         ...props.inputProps,
     }), []);
 
-    return <input qwe={inputProps} />;
-    /*return components.ui.renderView(props.view || 'form.InputFieldView', {
+    return components.ui.renderView(props.view || 'form.InputFieldView', {
         ...props,
         inputProps,
-    });*/
+    });
 }
 
 export default fieldWrapper('InputField', InputField);

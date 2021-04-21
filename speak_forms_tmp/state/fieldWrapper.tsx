@@ -22,7 +22,7 @@ const createDynamicField = (componentId, Component) => {
         // Resolve data provider
         const initialState = reducerItem({}, formInitialize(null, props.value));
         const [value, setValue] = useState(initialState);
-        const error = props.error;
+        const errors = props.errors;
         // ----------------------------------------
         // -------
 
@@ -37,7 +37,7 @@ const createDynamicField = (componentId, Component) => {
         const wrapperProps = {
             componentId,
             formId,
-            error,
+            errors,
             input,
         };
 
@@ -72,7 +72,7 @@ export default function fieldWrapper<T extends any>(componentId, Component: T, o
                     required={_has(props, 'required') ? props.required : metaProps.required}
                     label={options.label === false ? null : (_has(props, 'label') ? props.label : metaProps.label)}
                     hint={_has(props, 'hint') ? props.hint : metaProps.hint}
-                    error={props.error}
+                    errors={props.errors}
                 >
                     <DynamicField {...props} />
                 </FieldLayout>

@@ -13,6 +13,7 @@ export default {
     id: ROUTE_ROOT,
     exact: true,
     path: '/',
+    title: 'Home',
     component: IndexPage,
     roles,
     items: {

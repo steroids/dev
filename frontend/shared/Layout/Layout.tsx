@@ -1,7 +1,7 @@
 import * as React from 'react';
-
+import {useEffect} from 'react';
 import logo from 'static/logo-steroids.svg';
-import {useBem} from '@steroidsjs/core/hooks';
+import {useBem, useComponents, useSelector} from '@steroidsjs/core/hooks';
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
 import Portal from '@steroidsjs/core/ui/layout/Portal';
@@ -9,9 +9,23 @@ import useLayout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hooks/useLa
 import {ROUTE_ROOT} from '../../routes';
 
 import './Layout.scss';
+import {isInitialized as getIsInitialized} from '@steroidsjs/core/reducers/auth';
+
 
 export default function Layout(props) {
     const bem = useBem('Layout');
+    const components = useComponents();
+
+    const {isInitialized} = useSelector(state => ({
+        isInitialized: getIsInitialized(state)
+    }));
+
+    useEffect(() => {
+        if (isInitialized) {
+            components.resource.loadGoogleCaptcha();
+        }
+    }, [isInitialized]);
+
     const {status} = useLayout();
 
     const renderContent = () => {

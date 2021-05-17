@@ -11,7 +11,6 @@ import {ROUTE_ROOT} from '../../routes';
 import './Layout.scss';
 import {isInitialized as getIsInitialized} from '@steroidsjs/core/reducers/auth';
 
-
 export default function Layout(props) {
     const bem = useBem('Layout');
     const components = useComponents();

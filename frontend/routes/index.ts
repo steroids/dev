@@ -9,7 +9,7 @@ export const ROUTE_REACT = 'react';
 
 const roles = [null];
 
-export default () => ({
+export default {
     id: ROUTE_ROOT,
     exact: true,
     path: '/',
@@ -30,4 +30,4 @@ export default () => ({
             roles,
         },
     },
-} as IRouteItem);
+} as IRouteItem;

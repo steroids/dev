@@ -8,8 +8,8 @@ import 'style/index.scss';
 export default function Application() {
     const {renderApplication} = useApplication({
         reducers: require('@steroidsjs/core/reducers').default,
-        routes: require('routes').default,
-        layoutView: require('shared/Layout').default,
+        routes: () => require('routes').default,
+        layoutView: () => require('shared/Layout').default,
         components: {
             locale: {
                 className: LocaleComponent,

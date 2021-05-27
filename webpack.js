@@ -7,6 +7,7 @@ require('./steroids/react-webpack')
         staticPath: '',
         baseUrl: 'frontend/',
         inlineSvg: true,
+        serverPath: './steroids/ssr',
         webpack: {
             resolve: {
                 alias: {

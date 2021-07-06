@@ -1,3 +1,5 @@
+const path = require('path');
+
 process.env.APP_BACKEND_URL = process.env.APP_BACKEND_URL || 'https://steroids.kozhindedev.com';
 
 const webpackConfig = {
@@ -18,7 +20,8 @@ require('./steroids/react-webpack')
         staticPath: '',
         baseUrl: 'frontend/',
         inlineSvg: true,
-        serverPath: './steroids/ssr',
+        serverPath: './steroids/ssr/index.ts',
+        applicationPath: '/frontend/Application.tsx',
         webpack: webpackConfig,
         ssr: webpackConfig
     })

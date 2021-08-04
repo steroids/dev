@@ -22,6 +22,7 @@ require('./steroids/react-webpack')
         inlineSvg: true,
         serverPath: './steroids/ssr/index.ts',
         applicationPath: '/frontend/Application.tsx',
+        initActionPath: '/frontend/shared/Layout/Layout.tsx',
         webpack: webpackConfig,
         ssr: webpackConfig
     })

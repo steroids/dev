@@ -2,6 +2,7 @@ import IndexPage from './IndexPage';
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
 import Yii2Page from './Yii2Page/Yii2Page';
 import ReactPage from './ReactPage';
+import ExamplePage, {ExamplePageFetchConfig} from './ExamplePage/ExamplePage';
 
 export const ROUTE_ROOT = 'root';
 export const ROUTE_YII2 = 'yii2';
@@ -28,6 +29,12 @@ export default {
             path: '/react/:category?/:path?',
             component: ReactPage,
             roles,
+        },
+        ['example']: {
+            path: '/example/:id',
+            component: ExamplePage,
+            roles,
+            preloadData: () => [ExamplePageFetchConfig]
         },
     },
 } as IRouteItem;

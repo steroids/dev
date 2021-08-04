@@ -4,12 +4,16 @@ import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
 import MetaComponent from '@steroidsjs/core/components/MetaComponent';
 import ResourceComponent from '@steroidsjs/core/components/ResourceComponent';
 import 'style/index.scss';
+import HttpComponent from '@steroidsjs/core/components/HttpComponent';
 
 export const config = {
     reducers: require('@steroidsjs/core/reducers').default,
     routes: () => require('routes').default,
     layoutView: () => require('shared/Layout').default,
     components: {
+        http: {
+            className: HttpComponent,
+        },
         locale: {
             className: LocaleComponent,
         },

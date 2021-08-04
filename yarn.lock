@@ -2143,6 +2143,19 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
+"@steroidsjs/eslint-config@^2.0.0-beta.3":
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/eslint-config/-/eslint-config-2.0.0-beta.3.tgz#29eac1104770d0a90290221373d4c5a5b6300430"
+  integrity sha512-QoUS3IcGot5YRTEvb2H6KOXw4gooTiZFpBMHKZ6efGVa8+UDp0judHmOsakhvZ/hx456uJZVWxIGf3g7brRBqw==
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^4.15.0"
+    "@typescript-eslint/parser" "^4.15.0"
+    eslint-config-airbnb "18.2.1"
+    eslint-plugin-import "^2.22.1"
+    eslint-plugin-jsx-a11y "^6.4.1"
+    eslint-plugin-react "^7.21.5"
+    eslint-plugin-react-hooks "^1.7.0"
+
 "@storybook/addons@6.2.7":
   version "6.2.7"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.2.7.tgz#f31343654e564dd91f1ec103f130fa23e996745b"

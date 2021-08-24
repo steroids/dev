@@ -7,6 +7,15 @@ require('./steroids/react-webpack')
         staticPath: '',
         baseUrl: 'frontend/',
         inlineSvg: true,
+        devServer: {
+            proxy: [
+                {
+                    context: ['/api'],
+                    target: 'https://payapp.dev.kozhindev.com/',
+                    changeOrigin: true,
+                },
+            ],
+        },
         webpack: {
             resolve: {
                 alias: {

@@ -4,6 +4,7 @@ import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
 import MetaComponent from '@steroidsjs/core/components/MetaComponent';
 import ResourceComponent from '@steroidsjs/core/components/ResourceComponent';
 import 'style/index.scss';
+import HttpComponent from '@steroidsjs/core/components/HttpComponent';
 
 export default function Application() {
     const {renderApplication} = useApplication({
@@ -16,6 +17,9 @@ export default function Application() {
             },
             meta: {
                 className: MetaComponent,
+            },
+            http: {
+                className: HttpComponent,
             },
             resource: {
                 className: ResourceComponent,

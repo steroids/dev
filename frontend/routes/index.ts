@@ -1,7 +1,7 @@
 import IndexPage from './IndexPage';
-import ReactPage from './ReactPage';
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
 import Yii2Page from './Yii2Page/Yii2Page';
+import ReactPage from './ReactPage';
 
 export const ROUTE_ROOT = 'root';
 export const ROUTE_YII2 = 'yii2';
@@ -13,6 +13,7 @@ export default {
     id: ROUTE_ROOT,
     exact: true,
     path: '/',
+    title: 'Home',
     component: IndexPage,
     roles,
     items: {

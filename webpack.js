@@ -7,11 +7,22 @@ require('./steroids/react-webpack')
         staticPath: '',
         baseUrl: 'frontend/',
         inlineSvg: true,
+        devServer: {
+            proxy: [
+                {
+                    context: ['/api'],
+                    target: 'https://payapp.dev.kozhindev.com/',
+                    changeOrigin: true,
+                },
+            ],
+        },
         webpack: {
             resolve: {
                 alias: {
-                    '@steroidsjs/core': __dirname + '/steroids/react',
-                    '@steroidsjs/bootstrap': __dirname + '/steroids/react-bootstrap',
+                    '@steroidsjs/core/build': __dirname + '/steroids/react/build',
+                    '@steroidsjs/core/docs': __dirname + '/steroids/react/docs',
+                    '@steroidsjs/core': __dirname + '/steroids/react/src',
+                    '@steroidsjs/bootstrap': __dirname + '/steroids/react-bootstrap/src',
                 },
             },
         },

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "lib": ["dom", "esnext"],
@@ -9,25 +9,31 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "reducers/*": [
-        "steroids/react/reducers/*"
-      ],
       "@steroidsjs/core/*": [
-        "steroids/react/*"
+        "steroids/react/src/*"
       ],
       "@steroidsjs/bootstrap": [
-        "steroids/react-bootstrap"
+        "steroids/react-bootstrap/src"
       ],
       "@steroidsjs/bootstrap/*": [
-        "steroids/react-bootstrap/*"
-      ],
-      "@steroidsjs/native/*": [
-        "steroids/react-native/*"
+        "steroids/react-bootstrap/src/*"
       ]
     }
   },
+  "include": [
+    "frontend/**/*",
+    "steroids/react/src/**/*",
+    "steroids/react-bootstrap/src/**/*",
+  ],
+  // TODO fix eslint errors
   "exclude": [
-    "mobile/*",
-    "steroids/react-native/*"
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "steroids/react/hooks/useList.ts",
+    "steroids/react-bootstrap/src/crud",
+    "steroids/react-bootstrap/src/form",
+    "steroids/react-bootstrap/src/format",
+    "steroids/react-bootstrap/src/list",
+    "steroids/react-bootstrap/src/modal",
   ]
 }

@@ -1,4 +1,5 @@
 <?php
+
 return [
     'a::gii' => [
         'type' => 2,
@@ -630,6 +631,58 @@ return [
         'description' => 'update',
     ],
     'm::steroids\\payment\\models\\PaymentProviderLog::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\document\\models\\DocumentTag' => [
+        'type' => 2,
+        'description' => 'steroids\\document\\models\\DocumentTag',
+        'children' => [
+            'm::steroids\\document\\models\\DocumentTag::view',
+            'm::steroids\\document\\models\\DocumentTag::create',
+            'm::steroids\\document\\models\\DocumentTag::update',
+            'm::steroids\\document\\models\\DocumentTag::delete',
+        ],
+    ],
+    'm::steroids\\document\\models\\DocumentTag::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\document\\models\\DocumentTag::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\document\\models\\DocumentTag::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\document\\models\\DocumentTag::delete' => [
+        'type' => 2,
+        'description' => 'delete',
+    ],
+    'm::steroids\\notifier\\models\\Notification' => [
+        'type' => 2,
+        'description' => 'steroids\\notifier\\models\\Notification',
+        'children' => [
+            'm::steroids\\notifier\\models\\Notification::view',
+            'm::steroids\\notifier\\models\\Notification::create',
+            'm::steroids\\notifier\\models\\Notification::update',
+            'm::steroids\\notifier\\models\\Notification::delete',
+        ],
+    ],
+    'm::steroids\\notifier\\models\\Notification::view' => [
+        'type' => 2,
+        'description' => 'view',
+    ],
+    'm::steroids\\notifier\\models\\Notification::create' => [
+        'type' => 2,
+        'description' => 'create',
+    ],
+    'm::steroids\\notifier\\models\\Notification::update' => [
+        'type' => 2,
+        'description' => 'update',
+    ],
+    'm::steroids\\notifier\\models\\Notification::delete' => [
         'type' => 2,
         'description' => 'delete',
     ],

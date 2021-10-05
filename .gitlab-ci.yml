@@ -7,7 +7,7 @@ variables:
   STEROIDS_REPOS: 'auth document billing core cron file gii notifier react react-admin react-bootstrap react-native react-webpack'
   VENDOR_DIRS: 'steroids vendor node_modules'
   EXCLUDE_DIRS: '.cache-loader .expo .git .idea node_modules tests mobile'
-  PROD_ROOT_DIR: '/var/www/steroids.kozhindev.com'
+  PROD_ROOT_DIR: '/var/www/steroids.kozhindev.com/frontend'
   PROD_DEPLOY_DIR: '/var/www/steroids.kozhindev.com/frontend/$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID'
 
 before_script:

@@ -1,5 +1,3 @@
-const path = require('path');
-
 process.env.APP_BACKEND_URL = process.env.APP_BACKEND_URL || 'https://steroids.kozhindedev.com';
 
 const webpackConfig = {

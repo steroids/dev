@@ -7,7 +7,6 @@ import Header from '@steroidsjs/core/ui/layout/Header';
 import Portal from '@steroidsjs/core/ui/layout/Portal';
 import useLayout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hooks/useLayout';
 import {ROUTE_ROOT} from '../../routes';
-
 import './Layout.scss';
 import {isInitialized as getIsInitialized} from '@steroidsjs/core/reducers/auth';
 

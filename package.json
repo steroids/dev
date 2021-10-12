@@ -28,7 +28,7 @@
     "@steroidsjs/ckeditor5": "^27.0.2-rc.2",
     "@steroidsjs/eslint-config": "^2.0.0-beta.3",
     "@storybook/react": "^6.0.13",
-    "@types/react": "~16.9.0",
+    "@types/react": "^17.0.27",
     "@types/react-redux": "^7.1.16",
     "@types/webpack-env": "^1.15.1",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",

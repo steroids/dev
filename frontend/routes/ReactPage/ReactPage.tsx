@@ -65,7 +65,7 @@ const CATEGORY_HOC = 'hoc';
 const CATEGORY_UI = 'ui';
 
 const getGithubUrl = (componentPath: string, exampleName: string) => {
-    return `https://github.com/steroids/react/blob/master/ui/${componentPath}/demo/${exampleName}.tsx`;
+    return `https://github.com/steroids/react/blob/master/src/ui/${componentPath}/demo/${exampleName}.tsx`;
 };
 
 const autoDocs = require('@steroidsjs/core/build/docs-autogen-result.json');
@@ -101,7 +101,7 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
             id: CATEGORY_COMPONENT,
             label: 'Компоненты приложения',
             items: Object.entries(autoDocs.components || {})
-                .map(([name, info]) => {
+                .map(([name]) => {
                     const match = name.match(/^components\/(.*)Component$/);
                     if (!match) {
                         return;
@@ -127,7 +127,7 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
             id: CATEGORY_HOC,
             label: 'High Order Component',
             items: Object.entries(autoDocs.interfaces || {})
-                .map(([name, info]) => {
+                .map(([name]) => {
                     const match = name.match(/^I(.*)Hoc(Output|Input)$/);
                     if (!match) {
                         return;

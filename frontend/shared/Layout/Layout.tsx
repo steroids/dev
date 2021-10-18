@@ -5,6 +5,7 @@ import {useBem, useComponents, useSelector} from '@steroidsjs/core/hooks';
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
 import Portal from '@steroidsjs/core/ui/layout/Portal';
+import ModalPortal from '@steroidsjs/core/ui/modal/ModalPortal';
 import useLayout, {STATUS_LOADING, STATUS_OK} from '@steroidsjs/core/hooks/useLayout';
 import {ROUTE_ROOT} from '../../routes';
 import './Layout.scss';
@@ -55,6 +56,7 @@ export default function Layout(props) {
                 {renderContent()}
                 <Notifications/>
                 <Portal/>
+                <ModalPortal />
             </div>
         </div>
     );

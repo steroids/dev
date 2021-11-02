@@ -361,7 +361,7 @@ export default class ReactPage extends React.PureComponent<IReactPageProps, IRea
 
         // Order demos by @order tag
         let demosKeys = Object.keys(demos || {});
-        demosKeys = _orderBy(demosKeys, name => _get(autoDocs.demos, path.concat([name, 'order'])));
+        demosKeys = _orderBy(demosKeys, name => parseInt(_get(autoDocs.demos, path.concat([name, 'order'])), 10));
 
         return (
             <>

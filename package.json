@@ -80,7 +80,7 @@
     "lodash-es": "^4.17.15",
     "marked": "^1.1.1",
     "mini-css-extract-plugin": "^0.10.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "node-sass": "^4.14.1",
     "null-loader": "^4.0.1",
     "path-to-regexp": "^3.2.0",

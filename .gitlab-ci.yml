@@ -4,7 +4,7 @@ stages:
 
 variables:
   DEV_DEPLOY_DIR: '/var/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
-  STEROIDS_REPOS: 'auth document billing core cron file gii notifier react react-admin react-bootstrap react-native react-webpack'
+  STEROIDS_REPOS: 'react react-admin react-bootstrap react-native react-webpack'
   VENDOR_DIRS: 'steroids vendor node_modules'
   EXCLUDE_DIRS: '.cache-loader .expo .git .idea node_modules tests mobile'
   PROD_ROOT_DIR: '/var/www/steroids.kozhindev.com/frontend'
@@ -38,7 +38,6 @@ build:
         fi
         cd $CI_PROJECT_DIR
       done
-    - composer --no-interaction --no-progress --prefer-dist install
     - yarn
     - node webpack production
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
@@ -63,10 +62,6 @@ deploy_dev:
   script:
     - ssh root@dev "mkdir -p $DEV_DEPLOY_DIR"
     - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude && rsync -rzak --exclude-from=../.rsync-exclude $CI_PROJECT_DIR/ root@dev:$DEV_DEPLOY_DIR
-    - ssh root@dev "cd $DEV_DEPLOY_DIR
-      && ln -sf ../config/config.php
-      && php yii migrate --interactive=0
-      && service php7.4-fpm restart"
 
 deploy_prod:
   stage: deploy
@@ -77,7 +72,3 @@ deploy_prod:
     - ssh prod "mkdir -p $PROD_DEPLOY_DIR"
     - printf "%s\n" $EXCLUDE_DIRS > ../.rsync-exclude
       && rsync -rzak $CI_PROJECT_DIR/public prod:$PROD_DEPLOY_DIR
-    - ssh prod "
-      cd $PROD_DEPLOY_DIR
-      && rm -f $PROD_ROOT_DIR/current
-      && ln -sf $PROD_DEPLOY_DIR $PROD_ROOT_DIR/current"

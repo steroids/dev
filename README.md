@@ -26,6 +26,8 @@ cd react
 yarn
 ```
 
+выполняем тоже самое для `react-bootstrap` и `boilerplate-react`.
+
 ### 4. Конфигурация репозиториев
 
 -   Переходим в `boilerplate-react/webpack.js`. Это настройки для запуска `webpack` по-умолчанию:
@@ -70,19 +72,18 @@ require('@steroidsjs/webpack').config({
             alias: {
                 //Алиасы используемые для импорта функционала внутри react-boilerplate
                 '@steroidsjs/core': path.resolve(__dirname, STEROIDS_PATH_CORE),
-                '@steroidsjs/bootstrap': path.resolve(
-                    __dirname,
-                    STEROIDS_PATH_BOOTSTRAP,
-                ),
+                '@steroidsjs/bootstrap': path.resolve(__dirname,STEROIDS_PATH_BOOTSTRAP),
             },
         },
     },
 });
 ```
 
+-   Теперь все изменения произведенные в репозиториях `react` и `react-bootstrap` будут сразу применяться в `boilerplate-react`.
+
 ### 5. Запуск проекта
 
--   Для запуска проекта переходим через теминал в репозиторий `react-boilerplate` и выполняем скрипт `yarn watch`:
+-   Для запуска проекта переходим в репозиторий `react-boilerplate` и выполняем скрипт `yarn watch`:
 
 ```bash
 cd boilerplate-react
@@ -98,7 +99,7 @@ i ｢wds｣: Content not from webpack is served from D:\WEBProjects\ReactApps\st
 i ｢wds｣: 404s will fallback to /frontend/index.html
 ```
 
-- Теперь все изменения произведенные в репозиториях react и react-bootstrap будут сразу применяться и отражаться в boilerplate-react.
+
 
 #### Генерация/обновление документации (typedoc)
 

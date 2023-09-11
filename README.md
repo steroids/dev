@@ -1,49 +1,108 @@
-# Steroids Dev Repository
+# Развертывание dev проекта
 
-Репозиторий предназначен для удобной разработки библиотеки `steroids`.
-
-
-## Развертывание дев проекта
-
-#### 1. Клонируем текущий репозиторий
+#### 1. Клонируем репозиторий boilerplate-react
 
 ```
-git clone https://github.com/steroids/dev
+git clone https://github.com/steroids/boilerplate-react
 ```
 
-#### 2. Клонирование репозиториев
+Если вы просто хотите разрабатывать на `Steroids` не меняя функционал внутри фреймворка сразу переходите к пункту **3** и **5**.
 
-Необходимо склонировать все репозитории стероидов в папку `steroids` в корне проекта.
+#### 2. Клонирование репозиториев разделяющих core и view часть
+
+Необходимо склонировать все репозитории `steroids` в папку в корне проекта (`там где лежит boilerplate-react`).
 
 ```bash
-mkdir -p steroids
-git clone https://github.com/steroids/auth
-git clone https://github.com/steroids/billing
-git clone https://github.com/steroids/core
-git clone https://github.com/steroids/cron
-git clone https://github.com/steroids/file
-git clone https://github.com/steroids/gii
-git clone https://github.com/steroids/notifier
 git clone https://github.com/steroids/react
-git clone https://github.com/steroids/react-admin
 git clone https://github.com/steroids/react-bootstrap
-git clone https://github.com/steroids/react-native
-git clone https://github.com/steroids/react-webpack
 ```
 
-### 3. Конфигурация
+### 3. Установка зависимостей
 
-- Создайте базу данных `steroids` в MySQL.
-- Склонируйте файл `config.sample.php` в `config.php` и настройте в последнем доступ к БД.
+Для каждого из репозиториев необходимо установить зависимости из package.json. Пример:
 
 ```bash
-cp config.sample.php config.php
+cd react
+yarn
+```
+
+выполняем тоже самое для `react-bootstrap` и `boilerplate-react`.
+
+### 4. Конфигурация репозиториев
+
+-   Переходим в `boilerplate-react/webpack.js`. Это настройки для запуска `webpack` по-умолчанию:
+
+```ts
+//boilerplate-react/webpack.js
+
+require('@steroidsjs/webpack').config({
+    inlineSvg: true,
+    port: 9991,
+});
+```
+
+-   Добавляем в начало файла `webpack.js` этот код, представляющий собой пути до склонированных репозиториев:
+
+```ts
+//boilerplate-react/webpack.js
+
+const path = require('path');
+
+//Пути до src каталога в каждом из репозиториев
+const STEROIDS_PATH_CORE = '../react/src';
+const STEROIDS_PATH_BOOTSTRAP = '../react-bootstrap/src';
+```
+
+-   Добавляем алиасы для репозиториев следующим образом:
+
+```ts
+//boilerplate-react/webpack.js
+
+const path = require('path');
+
+//Пути до src каталога в каждом из репозиториев
+const STEROIDS_PATH_CORE = '../react/src';
+const STEROIDS_PATH_BOOTSTRAP = '../react-bootstrap/src';
+
+require('@steroidsjs/webpack').config({
+    port: 9991,
+    inlineSvg: true,
+    webpack: {
+        resolve: {
+            alias: {
+                //Алиасы используемые для импорта функционала внутри react-boilerplate
+                '@steroidsjs/core': path.resolve(__dirname, STEROIDS_PATH_CORE),
+                '@steroidsjs/bootstrap': path.resolve(__dirname,STEROIDS_PATH_BOOTSTRAP),
+            },
+        },
+    },
+});
+```
+
+-   Теперь все изменения произведенные в репозиториях `react` и `react-bootstrap` будут сразу применяться в `boilerplate-react`.
+
+### 5. Запуск проекта
+
+-   Для запуска проекта переходим в репозиторий `react-boilerplate` и выполняем скрипт `yarn watch`:
+
+```bash
+cd boilerplate-react
+yarn watch
+```
+
+-   После команды запустится локальный сервер по адресу указанному в терминале:
+
+```bash
+i ｢wds｣: Project is running at http://127.0.0.1:9991/ <--- Адрес сервера
+i ｢wds｣: webpack output is served from undefined
+i ｢wds｣: Content not from webpack is served from D:\WEBProjects\ReactApps\steroids\boilerplate-react\public
+i ｢wds｣: 404s will fallback to /frontend/index.html
 ```
 
 
-## Генерация/обновление документации (typedoc)
 
-```sh
+#### Генерация/обновление документации (typedoc)
+
+```bash
 yarn docs
 ```
-
